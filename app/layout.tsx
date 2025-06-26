@@ -26,6 +26,10 @@ export default function RootLayout({
           rel="stylesheet"
         />
         <link href="https://fonts.cdnfonts.com/css/gotham" rel="stylesheet" />
+        <link rel="icon" href="/favicon/favicon.ico" sizes="any" />
+        <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+        <link rel="apple-touch-icon" href="/favicon/apple-touch-icon.png" />
+        <link rel="manifest" href="/favicon/site.webmanifest" />
       </head>
       <body className={inter.className} style={{ fontFamily: "DM Sans, sans-serif" }}>
         {children}

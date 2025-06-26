@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button"
 import { Mail, Instagram, Facebook } from "lucide-react"
 import Link from "next/link"
+import Image from "next/image"
 
 export default function AboutPage() {
   return (
@@ -30,18 +31,14 @@ export default function AboutPage() {
             {/* Centered Logo */}
             <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center">
               <Link href="/">
-                <div
-                  className="text-2xl md:text-3xl font-bold text-[#032b53]"
-                  style={{ fontFamily: "Gotham Bold, sans-serif" }}
-                >
-                  Hammy's
-                </div>
-                <div
-                  className="text-xs md:text-sm text-gray-600 font-medium tracking-wider"
-                  style={{ fontFamily: "DM Sans, sans-serif" }}
-                >
-                  HOME EXPERTS
-                </div>
+                <Image
+                  src="/logos/hammys-primary-logo.svg"
+                  alt="Hammy Stacked Logo"
+                  width={200}
+                  height={100}
+                  priority
+                  style={{ display: "inline-block" }}
+                />
               </Link>
             </div>
 
