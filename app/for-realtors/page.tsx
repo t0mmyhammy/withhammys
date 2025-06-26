@@ -19,6 +19,7 @@ import {
   Phone,
 } from "lucide-react"
 import Link from "next/link"
+import Image from "next/image"
 
 export default function ForRealtorsPage() {
   return (
@@ -48,18 +49,14 @@ export default function ForRealtorsPage() {
             {/* Centered Logo */}
             <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center">
               <Link href="/">
-                <div
-                  className="text-2xl md:text-3xl font-bold text-[#032b53]"
-                  style={{ fontFamily: "Gotham Bold, sans-serif" }}
-                >
-                  Hammy's
-                </div>
-                <div
-                  className="text-xs md:text-sm text-gray-600 font-medium tracking-wider"
-                  style={{ fontFamily: "DM Sans, sans-serif" }}
-                >
-                  HOME EXPERTS
-                </div>
+                <Image
+                  src="/logos/hammys-primary-logo.svg"
+                  alt="Hammy Stacked Logo"
+                  width={200}
+                  height={100}
+                  priority
+                  style={{ display: "inline-block" }}
+                />
               </Link>
             </div>
 
@@ -114,7 +111,7 @@ export default function ForRealtorsPage() {
               style={{ fontFamily: "DM Sans, sans-serif" }}
             >
               Hammy's handles the setup, maintenance, and vendor coordination new homeowners need, so your clients feel
-              supported long after the paperwork’s done.
+              supported long after the paperwork's done.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -561,7 +558,7 @@ export default function ForRealtorsPage() {
                 {
                   question: "How do I refer someone?",
                   answer:
-                    "Just share their name + contact info with us — or send them to your co-branded referral link. You’ll never have to follow up — we handle it, and keep you updated.",
+                    "Just share their name + contact info with us — or send them to your co-branded referral link. You'll never have to follow up — we handle it, and keep you updated.",
                 },
                 {
                   question: "Can I brand this as part of my service?",

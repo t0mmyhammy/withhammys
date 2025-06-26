@@ -5,6 +5,7 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Home, CheckCircle, Calendar, Shield, Star, Mail, Instagram, Facebook, MapPin, ChevronDown } from "lucide-react"
 import Link from "next/link"
+import Image from "next/image"
 
 export default function HammysLanding() {
   return (
@@ -29,18 +30,14 @@ export default function HammysLanding() {
 
             {/* Centered Logo */}
             <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center">
-              <div
-                className="text-2xl md:text-3xl font-bold text-[#032b53]"
-                style={{ fontFamily: "Gotham Bold, sans-serif" }}
-              >
-                Hammy's
-              </div>
-              <div
-                className="text-xs md:text-sm text-gray-600 font-medium tracking-wider"
-                style={{ fontFamily: "DM Sans, sans-serif" }}
-              >
-                HOME EXPERTS
-              </div>
+              <Image
+                src="/logos/hammys-primary-logo.svg"
+                alt="Hammy Stacked Logo"
+                width={200}
+                height={100}
+                priority
+                style={{ display: "inline-block" }}
+              />
             </div>
 
             {/* Right Nav Items + CTA */}
@@ -75,7 +72,6 @@ export default function HammysLanding() {
         <div className="container mx-auto px-4 py-16 md:py-24 lg:py-32">
           <div className="max-w-4xl mx-auto text-center">
             <Badge
-              variant="secondary"
               className="mb-6 bg-[#fba0ab]/10 text-[#032b53] border-[#fba0ab]/20"
               style={{ fontFamily: "DM Sans, sans-serif" }}
             >
@@ -98,7 +94,6 @@ export default function HammysLanding() {
             </p>
 
             <Button
-              size="lg"
               className="bg-[#032b53] hover:bg-[#032b53]/90 text-white px-8 py-6 text-lg rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
               style={{ fontFamily: "DM Sans, sans-serif" }}
             >
@@ -371,7 +366,6 @@ export default function HammysLanding() {
                 Currently serving Metro Detroit's finest neighborhoods
               </p>
               <Badge
-                variant="secondary"
                 className="bg-[#fba0ab]/10 text-[#032b53] border-[#fba0ab]/20"
                 style={{ fontFamily: "DM Sans, sans-serif" }}
               >
@@ -637,7 +631,6 @@ export default function HammysLanding() {
               who want to do this right from day one.
             </p>
             <Button
-              size="lg"
               className="bg-[#fba0ab] hover:bg-[#fba0ab]/90 text-[#032b53] px-8 py-6 text-lg rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 font-semibold"
               style={{ fontFamily: "DM Sans, sans-serif" }}
             >
@@ -660,7 +653,14 @@ export default function HammysLanding() {
                   className="text-2xl font-bold text-[#032b53] mb-2"
                   style={{ fontFamily: "Gotham Bold, sans-serif" }}
                 >
-                  Hammy's
+                  <Image
+                    src="/logos/hammys-stacked-logo.svg"
+                    alt="Hammys Primary Logo"
+                    width={180}
+                    height={40}
+                    priority
+                    style={{ display: "inline-block" }}
+                  />
                 </h3>
                 <p className="text-gray-600" style={{ fontFamily: "DM Sans, sans-serif" }}>
                   We sweat the small stuff so you can bring home the bacon.
