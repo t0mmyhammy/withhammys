@@ -20,12 +20,18 @@ import {
 } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
-import NavBar from "@/components/NavBar"
+import NavBarMobile from "@/components/NavBar"
+import NavBarDesktop from "@/components/NavBarDesktop"
 
 export default function ForRealtorsPage() {
   return (
     <div className="min-h-screen bg-white">
-      <NavBar />
+      <div className="md:hidden">
+        <NavBarMobile />
+      </div>
+      <div className="hidden md:block">
+        <NavBarDesktop />
+      </div>
 
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-gradient-to-b from-slate-50 to-white">
@@ -508,7 +514,7 @@ export default function ForRealtorsPage() {
                 {
                   question: "How soon can Hammy's start?",
                   answer:
-                    "We onboard most clients within 48 hours of closing. Perfect timing for when they're settling into their new home.",
+                    "We onboard most clients within 1 business day of closing. Perfect timing for when they're settling into their new home.",
                 },
                 {
                   question: "What's the cost to my clients?",
