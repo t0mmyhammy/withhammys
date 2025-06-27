@@ -6,12 +6,18 @@ import { Label } from "@/components/ui/label"
 import { Home, CheckCircle, Calendar, Shield, Star, Mail, Instagram, Facebook, MapPin, ChevronDown } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
-import NavBar from "@/components/NavBar"
+import NavBarMobile from "@/components/NavBar"
+import NavBarDesktop from "@/components/NavBarDesktop"
 
 export default function HammysLanding() {
   return (
     <div className="min-h-screen bg-white">
-      <NavBar />
+      <div className="md:hidden">
+        <NavBarMobile />
+      </div>
+      <div className="hidden md:block">
+        <NavBarDesktop />
+      </div>
 
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-gradient-to-b from-slate-50 to-white">
@@ -383,7 +389,7 @@ export default function HammysLanding() {
                   {
                     question: "How quickly can we get started?",
                     answer:
-                      "We can schedule your home visit within 48 hours. After that, we'll have your custom plan ready within a week.",
+                      "We can schedule your home visit within 1 business day. After that, we'll have your custom plan ready within a week.",
                   },
                   {
                     question: "What if something urgent happens?",
@@ -553,7 +559,7 @@ export default function HammysLanding() {
                         </Button>
 
                         <p className="text-xs text-gray-500 text-center" style={{ fontFamily: "DM Sans, sans-serif" }}>
-                          We'll reach out within 48 hours to schedule your free home assessment
+                          We'll reach out within 1 business day to schedule your free home assessment
                         </p>
                       </form>
                     </div>
@@ -600,7 +606,7 @@ export default function HammysLanding() {
                   style={{ fontFamily: "Gotham Bold, sans-serif" }}
                 >
                   <Image
-                    src="/logos/hammys-stacked-logo.png"
+                    src="/logos/hammy-stacked-logo.svg"
                     alt="Hammys Primary Logo"
                     width={180}
                     height={40}

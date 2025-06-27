@@ -2,12 +2,18 @@ import { Button } from "@/components/ui/button"
 import { Mail, Instagram, Facebook } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
-import NavBar from "@/components/NavBar"
+import NavBarMobile from "@/components/NavBar"
+import NavBarDesktop from "@/components/NavBarDesktop"
 
 export default function AboutPage() {
   return (
     <div className="min-h-screen bg-white">
-      <NavBar />
+      <div className="md:hidden">
+        <NavBarMobile />
+      </div>
+      <div className="hidden md:block">
+        <NavBarDesktop />
+      </div>
 
       {/* About Content */}
       <section className="py-20 bg-white">

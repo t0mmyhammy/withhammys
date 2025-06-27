@@ -11,7 +11,7 @@ const navLinks = [
   { href: "/#faq", label: "FAQ" },
 ];
 
-export default function NavBar() {
+export default function NavBarMobile() {
   const [menuOpen, setMenuOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
 
@@ -42,7 +42,7 @@ export default function NavBar() {
 
   return (
     <>
-      <nav className="sticky top-0 z-50 bg-white border-b border-gray-100 py-4 w-full">
+      <nav className="sticky top-0 z-50 bg-white border-b border-gray-100 py-4 w-full md:hidden">
         <div className="container mx-auto px-4 flex items-center justify-between">
           {/* Logo Left */}
           <Link href="/" className="flex items-center" tabIndex={menuOpen ? -1 : 0}>
