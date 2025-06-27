@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 
 export default function NavBarDesktop() {
   return (
-    <nav className="hidden md:flex relative bg-white border-b border-gray-100 py-4 sticky top-0 z-50 w-full">
+    <nav className="hidden md:flex bg-white border-b border-gray-100 py-4 sticky top-0 z-50 w-full">
       <div className="container mx-auto px-4 flex justify-between items-center">
         {/* Left Nav Items */}
         <div className="flex items-center space-x-8">
@@ -50,12 +50,14 @@ export default function NavBarDesktop() {
           >
             FAQ
           </Link>
-          <Button
-            className="bg-[#fba0ab] hover:bg-[#fba0ab]/90 text-[#032b53] font-semibold px-6 py-2 rounded-lg"
-            style={{ fontFamily: "DM Sans, sans-serif" }}
-          >
-            Get Setup
-          </Button>
+          <Link href="/#form">
+            <Button
+              className="bg-[#fba0ab] hover:bg-[#fba0ab]/90 text-[#032b53] font-semibold px-6 py-2 rounded-lg"
+              style={{ fontFamily: "DM Sans, sans-serif" }}
+            >
+              Get Setup
+            </Button>
+          </Link>
         </div>
       </div>
     </nav>

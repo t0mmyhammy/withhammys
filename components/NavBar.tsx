@@ -114,7 +114,7 @@ export default function NavBarMobile() {
               </Link>
             ))}
             <Link
-              href="/get-setup"
+              href="/#form"
               tabIndex={0}
               onClick={() => setMenuOpen(false)}
               className="mt-8 px-8 py-4 rounded-lg bg-[#fba0ab] text-[#032b53] font-bold text-xl shadow-lg hover:bg-[#fba0ab]/90 transition-colors"
