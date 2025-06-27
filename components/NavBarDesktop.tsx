@@ -1,8 +1,24 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
+import { useRouter, usePathname } from "next/navigation";
+import { useCallback } from "react";
 
 export default function NavBarDesktop() {
+  const router = useRouter();
+  const pathname = usePathname();
+
+  const scrollToForm = useCallback(() => {
+    if (pathname === "/") {
+      const el = document.getElementById("form");
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth" });
+      }
+    } else {
+      router.push("/#form");
+    }
+  }, [pathname, router]);
+
   return (
     <nav className="hidden md:flex bg-white border-b border-gray-100 py-4 sticky top-0 z-50 w-full">
       <div className="container mx-auto px-4 flex justify-between items-center">
@@ -50,14 +66,13 @@ export default function NavBarDesktop() {
           >
             FAQ
           </Link>
-          <Link href="/#form">
-            <Button
-              className="bg-[#fba0ab] hover:bg-[#fba0ab]/90 text-[#032b53] font-semibold px-6 py-2 rounded-lg"
-              style={{ fontFamily: "DM Sans, sans-serif" }}
-            >
-              Get Setup
-            </Button>
-          </Link>
+          <Button
+            className="bg-[#fba0ab] hover:bg-[#fba0ab]/90 text-[#032b53] font-semibold px-6 py-2 rounded-lg"
+            style={{ fontFamily: "DM Sans, sans-serif" }}
+            onClick={scrollToForm}
+          >
+            Get Setup
+          </Button>
         </div>
       </div>
     </nav>

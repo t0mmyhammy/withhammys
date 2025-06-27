@@ -9,8 +9,24 @@ import Image from "next/image"
 import NavBarMobile from "@/components/NavBar"
 import NavBarDesktop from "@/components/NavBarDesktop"
 import Form from "@/components/Form"
+import { useRouter, usePathname } from "next/navigation"
+import { useCallback } from "react"
 
 export default function HammysLanding() {
+  const router = useRouter();
+  const pathname = usePathname();
+
+  const scrollToForm = useCallback(() => {
+    if (pathname === "/") {
+      const el = document.getElementById("form");
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth" });
+      }
+    } else {
+      router.push("/#form");
+    }
+  }, [pathname, router]);
+
   return (
     <div className="min-h-screen bg-white">
       <div className="md:hidden">
@@ -46,14 +62,13 @@ export default function HammysLanding() {
               it.
             </p>
 
-            <Link href="/#form">
-              <Button
-                className="bg-[#032b53] hover:bg-[#032b53]/90 text-white px-8 py-6 text-lg rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
-                style={{ fontFamily: "DM Sans, sans-serif" }}
-              >
-                Get My Home Plan
-              </Button>
-            </Link>
+            <Button
+              className="bg-[#032b53] hover:bg-[#032b53]/90 text-white px-8 py-6 text-lg rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
+              style={{ fontFamily: "DM Sans, sans-serif" }}
+              onClick={scrollToForm}
+            >
+              Get My Home Plan
+            </Button>
 
             <p className="text-sm mt-4 text-gray-500" style={{ fontFamily: "DM Sans, sans-serif" }}>
               No pressure. No contracts. Just help when you need it.
@@ -454,14 +469,13 @@ export default function HammysLanding() {
               Join our Fall cohort and get your home running like a system. Limited spots available for new homeowners
               who want to do this right from day one.
             </p>
-            <Link href="/#form">
-              <Button
-                className="bg-[#fba0ab] hover:bg-[#fba0ab]/90 text-[#032b53] px-8 py-6 text-lg rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 font-semibold"
-                style={{ fontFamily: "DM Sans, sans-serif" }}
-              >
-                Get My Home Plan
-              </Button>
-            </Link>
+            <Button
+              className="bg-[#fba0ab] hover:bg-[#fba0ab]/90 text-[#032b53] px-8 py-6 text-lg rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 font-semibold"
+              style={{ fontFamily: "DM Sans, sans-serif" }}
+              onClick={scrollToForm}
+            >
+              Get My Home Plan
+            </Button>
             <p className="text-sm mt-4 opacity-75" style={{ fontFamily: "DM Sans, sans-serif" }}>
               Free home assessment • Custom plan • No pressure, just help
             </p>

@@ -1,8 +1,9 @@
 "use client";
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, useCallback } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Menu as MenuIcon, X as CloseIcon } from "lucide-react";
+import { useRouter, usePathname } from "next/navigation";
 
 const navLinks = [
   { href: "/", label: "FOR HOMEOWNERS" },
@@ -14,6 +15,21 @@ const navLinks = [
 export default function NavBarMobile() {
   const [menuOpen, setMenuOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
+
+  const router = useRouter();
+  const pathname = usePathname();
+
+  const scrollToForm = useCallback(() => {
+    setMenuOpen(false);
+    if (pathname === "/") {
+      const el = document.getElementById("form");
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth" });
+      }
+    } else {
+      router.push("/#form");
+    }
+  }, [pathname, router]);
 
   // Trap focus in menu when open
   useEffect(() => {
@@ -113,15 +129,14 @@ export default function NavBarMobile() {
                 {link.label}
               </Link>
             ))}
-            <Link
-              href="/#form"
+            <button
               tabIndex={0}
-              onClick={() => setMenuOpen(false)}
+              onClick={scrollToForm}
               className="mt-8 px-8 py-4 rounded-lg bg-[#fba0ab] text-[#032b53] font-bold text-xl shadow-lg hover:bg-[#fba0ab]/90 transition-colors"
               style={{ fontFamily: "DM Sans, sans-serif" }}
             >
               GET SETUP
-            </Link>
+            </button>
           </div>
         </div>
       )}
