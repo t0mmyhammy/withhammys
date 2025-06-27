@@ -2,68 +2,12 @@ import { Button } from "@/components/ui/button"
 import { Mail, Instagram, Facebook } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
+import NavBar from "@/components/NavBar"
 
 export default function AboutPage() {
   return (
     <div className="min-h-screen bg-white">
-      {/* Navigation Bar */}
-      <nav className="relative bg-white border-b border-gray-100 py-4 sticky top-0 z-50">
-        <div className="container mx-auto px-4">
-          <div className="flex justify-between items-center">
-            {/* Left Nav Items */}
-            <div className="flex items-center space-x-8">
-              <Link
-                href="/"
-                className="text-[#032b53] hover:text-[#fba0ab] transition-colors font-medium"
-                style={{ fontFamily: "DM Sans, sans-serif" }}
-              >
-                FOR HOMEOWNERS
-              </Link>
-              <Link
-                href="/for-realtors"
-                className="text-[#032b53] hover:text-[#fba0ab] transition-colors font-medium"
-                style={{ fontFamily: "DM Sans, sans-serif" }}
-              >
-                FOR REALTORS
-              </Link>
-            </div>
-
-            {/* Centered Logo */}
-            <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center">
-              <Link href="/">
-                <Image
-                  src="/logos/hammys-primary-logo.svg"
-                  alt="Hammy Stacked Logo"
-                  width={200}
-                  height={100}
-                  priority
-                  style={{ display: "inline-block" }}
-                />
-              </Link>
-            </div>
-
-            {/* Right Nav Items + CTA */}
-            <div className="flex items-center space-x-8">
-              <Link href="/about" className="text-[#fba0ab] font-medium" style={{ fontFamily: "DM Sans, sans-serif" }}>
-                ABOUT US
-              </Link>
-              <Link
-                href="/#faq"
-                className="text-[#032b53] hover:text-[#fba0ab] transition-colors font-medium"
-                style={{ fontFamily: "DM Sans, sans-serif" }}
-              >
-                FAQ
-              </Link>
-              <Button
-                className="bg-[#fba0ab] hover:bg-[#fba0ab]/90 text-[#032b53] font-semibold px-6 py-2 rounded-lg"
-                style={{ fontFamily: "DM Sans, sans-serif" }}
-              >
-                Get Setup
-              </Button>
-            </div>
-          </div>
-        </div>
-      </nav>
+      <NavBar />
 
       {/* About Content */}
       <section className="py-20 bg-white">
