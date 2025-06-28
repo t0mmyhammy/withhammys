@@ -28,10 +28,10 @@ export default function ForRealtorsPage() {
     <div className="min-h-screen bg-white">
       <div className="md:hidden">
         <NavBarMobile />
-      </div>
+            </div>
       <div className="hidden md:block">
         <NavBarDesktop />
-      </div>
+            </div>
 
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-gradient-to-b from-slate-50 to-white">
@@ -639,7 +639,7 @@ export default function ForRealtorsPage() {
                   <Link href="#" className="text-gray-600 hover:text-[#032b53] transition-colors">
                     <Instagram className="w-5 h-5" />
                   </Link>
-                  <Link href="#" className="text-gray-600 hover:text-[#032b53] transition-colors">
+                  <Link href="https://www.facebook.com/profile.php?id=61577580251772" className="text-gray-600 hover:text-[#032b53] transition-colors">
                     <Facebook className="w-5 h-5" />
                   </Link>
                 </div>
