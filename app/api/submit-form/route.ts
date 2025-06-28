@@ -22,6 +22,11 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "Invalid email format." }, { status: 400 });
     }
 
+    console.log('GOOGLE_SHEET_ID:', process.env.GOOGLE_SHEET_ID);
+    console.log('GOOGLE_SHEET_TAB:', process.env.GOOGLE_SHEET_TAB);
+    console.log('GMAIL_USER:', process.env.GMAIL_USER);
+    console.log('GMAIL_PASS:', process.env.GMAIL_PASS ? 'set' : 'not set');
+
     // --- Google Sheets Logic ---
     try {
       const credsPath = path.join(process.cwd(), "google-service-account.json");

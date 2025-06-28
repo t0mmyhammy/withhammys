@@ -5,7 +5,9 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { Home } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import PlacesAutocomplete from "react-places-autocomplete";
+import { Suggestion } from "react-places-autocomplete";
 
 export default function Form() {
   const [form, setForm] = useState({
@@ -19,6 +21,7 @@ export default function Form() {
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState("");
+  const [placesError, setPlacesError] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setForm({ ...form, [e.target.id]: e.target.value });
@@ -48,6 +51,26 @@ export default function Form() {
       setLoading(false);
     }
   };
+
+  useEffect(() => {
+    // Check if Google Places API is loaded
+    const checkGooglePlaces = () => {
+      if (typeof window !== "undefined" && window.google && window.google.maps && window.google.maps.places) {
+        console.log("Google Places API loaded successfully.");
+        setPlacesError(false);
+      } else {
+        console.warn("Google Places API not loaded. Falling back to manual address input.");
+        setPlacesError(true);
+      }
+    };
+    // Try after a short delay to allow script to load
+    const timeout = setTimeout(checkGooglePlaces, 1500);
+    return () => clearTimeout(timeout);
+  }, []);
+
+  useEffect(() => {
+    console.log('API Key:', process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY);
+  }, []);
 
   return (
     <Card className="border-0 shadow-lg rounded-2xl overflow-hidden">
@@ -88,7 +111,69 @@ export default function Form() {
             </div>
             <div>
               <Label htmlFor="address" className="text-sm font-medium text-[#032b53]" style={{ fontFamily: "DM Sans, sans-serif" }}>Home Address</Label>
-              <Input id="address" type="text" placeholder="Street address, City, ZIP" className="mt-1 border-gray-300 focus:border-[#032b53] focus:ring-[#032b53]" style={{ fontFamily: "DM Sans, sans-serif" }} value={form.address} onChange={handleChange} required />
+              {placesError ? (
+                <>
+                  <Input
+                    id="address"
+                    type="text"
+                    placeholder="Street address, City, ZIP"
+                    className="mt-1 border-gray-300 focus:border-[#032b53] focus:ring-[#032b53]"
+                    style={{ fontFamily: "DM Sans, sans-serif" }}
+                    value={form.address}
+                    onChange={handleChange}
+                    required
+                  />
+                  <p className="text-xs text-red-600 mt-1">Address autocomplete is unavailable. Please enter your address manually.</p>
+                </>
+              ) : (
+                <PlacesAutocomplete
+                  value={form.address}
+                  onChange={(address: string) => setForm({ ...form, address })}
+                  onSelect={(address: string) => setForm({ ...form, address })}
+                  searchOptions={{ types: ["address"] }}
+                  googleCallbackName="initPlacesScript"
+                >
+                  {({
+                    getInputProps,
+                    suggestions,
+                    getSuggestionItemProps,
+                    loading,
+                  }: {
+                    getInputProps: (options?: any) => any;
+                    suggestions: readonly Suggestion[];
+                    getSuggestionItemProps: (suggestion: Suggestion, options?: any) => any;
+                    loading: boolean;
+                  }) => (
+                    <div>
+                      <Input
+                        {...getInputProps({
+                          id: "address",
+                          placeholder: "Street address, City, ZIP",
+                          className: "mt-1 border-gray-300 focus:border-[#032b53] focus:ring-[#032b53]",
+                          style: { fontFamily: "DM Sans, sans-serif" },
+                          required: true,
+                        })}
+                      />
+                      <div className="absolute z-10 bg-white border border-gray-200 rounded-md shadow-lg mt-1 w-full">
+                        {loading && <div className="px-3 py-2 text-gray-500">Loading...</div>}
+                        {suggestions.map((suggestion) => {
+                          const className = suggestion.active
+                            ? "px-3 py-2 cursor-pointer bg-[#fba0ab]/10 text-[#032b53]"
+                            : "px-3 py-2 cursor-pointer";
+                          return (
+                            <div
+                              {...getSuggestionItemProps(suggestion, { className })}
+                              key={suggestion.placeId}
+                            >
+                              {suggestion.description}
+                            </div>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  )}
+                </PlacesAutocomplete>
+              )}
             </div>
             <div>
               <Label htmlFor="help" className="text-sm font-medium text-[#032b53]" style={{ fontFamily: "DM Sans, sans-serif" }}>How can we help?</Label>

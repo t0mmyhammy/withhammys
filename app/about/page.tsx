@@ -10,10 +10,10 @@ export default function AboutPage() {
     <div className="min-h-screen bg-white">
       <div className="md:hidden">
         <NavBarMobile />
-      </div>
+            </div>
       <div className="hidden md:block">
         <NavBarDesktop />
-      </div>
+            </div>
 
       {/* About Content */}
       <section className="py-20 bg-white">
@@ -147,7 +147,7 @@ export default function AboutPage() {
                   <Link href="#" className="text-gray-600 hover:text-[#032b53] transition-colors">
                     <Instagram className="w-5 h-5" />
                   </Link>
-                  <Link href="#" className="text-gray-600 hover:text-[#032b53] transition-colors">
+                  <Link href="https://www.facebook.com/profile.php?id=61577580251772" className="text-gray-600 hover:text-[#032b53] transition-colors">
                     <Facebook className="w-5 h-5" />
                   </Link>
                 </div>
