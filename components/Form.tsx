@@ -9,6 +9,17 @@ import { useState, useEffect } from "react";
 import PlacesAutocomplete from "react-places-autocomplete";
 import { Suggestion } from "react-places-autocomplete";
 
+// Helper to format US phone numbers as (123) 456-7890
+function formatPhoneNumber(value: string) {
+  // Remove all non-digit characters
+  const digits = value.replace(/\D/g, "");
+  const len = digits.length;
+  if (len === 0) return "";
+  if (len < 4) return `(${digits}`;
+  if (len < 7) return `(${digits.slice(0, 3)}) ${digits.slice(3)}`;
+  return `(${digits.slice(0, 3)}) ${digits.slice(3, 6)}-${digits.slice(6, 10)}`;
+}
+
 export default function Form() {
   const [form, setForm] = useState({
     firstName: "",
@@ -24,7 +35,11 @@ export default function Form() {
   const [placesError, setPlacesError] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setForm({ ...form, [e.target.id]: e.target.value });
+    if (e.target.id === "phone") {
+      setForm({ ...form, phone: formatPhoneNumber(e.target.value) });
+    } else {
+      setForm({ ...form, [e.target.id]: e.target.value });
+    }
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -32,6 +47,12 @@ export default function Form() {
     setLoading(true);
     setError("");
     setSuccess(false);
+    // Custom validation for first and last name
+    if (form.firstName.trim().length < 2 || form.lastName.trim().length < 2) {
+      setError("First and last name must be at least 2 characters each.");
+      setLoading(false);
+      return;
+    }
     try {
       const res = await fetch("/api/submit-form", {
         method: "POST",
@@ -88,106 +109,116 @@ export default function Form() {
           </p>
         </div>
         <div className="p-6">
-          <form className="space-y-4" onSubmit={handleSubmit}>
-            <div className="grid grid-cols-2 gap-4">
-              <div>
-                <Label htmlFor="firstName" className="text-sm font-medium text-[#032b53]" style={{ fontFamily: "DM Sans, sans-serif" }}>First Name</Label>
-                <Input id="firstName" type="text" className="mt-1 border-gray-300 focus:border-[#032b53] focus:ring-[#032b53]" style={{ fontFamily: "DM Sans, sans-serif" }} value={form.firstName} onChange={handleChange} required />
-              </div>
-              <div>
-                <Label htmlFor="lastName" className="text-sm font-medium text-[#032b53]" style={{ fontFamily: "DM Sans, sans-serif" }}>Last Name</Label>
-                <Input id="lastName" type="text" className="mt-1 border-gray-300 focus:border-[#032b53] focus:ring-[#032b53]" style={{ fontFamily: "DM Sans, sans-serif" }} value={form.lastName} onChange={handleChange} required />
-              </div>
+          {success ? (
+            <div className="flex flex-col items-center justify-center min-h-[200px] text-center">
+              <h2 className="text-2xl font-bold text-[#032b53] mb-2" style={{ fontFamily: 'Gotham Bold, sans-serif' }}>
+                You're in. And we're squealing with excitement.
+              </h2>
+              <p className="text-lg text-[#032b53] opacity-90" style={{ fontFamily: 'DM Sans, sans-serif' }}>
+                Thanks for filling out your home care form — a member of the Hammy's Home Team will follow up shortly to get things rolling.
+              </p>
             </div>
-            <div className="grid grid-cols-2 gap-4">
-              <div>
-                <Label htmlFor="email" className="text-sm font-medium text-[#032b53]" style={{ fontFamily: "DM Sans, sans-serif" }}>Email</Label>
-                <Input id="email" type="email" className="mt-1 border-gray-300 focus:border-[#032b53] focus:ring-[#032b53]" style={{ fontFamily: "DM Sans, sans-serif" }} value={form.email} onChange={handleChange} required />
+          ) : (
+            <form className="space-y-4" onSubmit={handleSubmit}>
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <Label htmlFor="firstName" className="text-sm font-medium text-[#032b53]" style={{ fontFamily: "DM Sans, sans-serif" }}>First Name</Label>
+                  <Input id="firstName" type="text" minLength={2} className="mt-1 border-gray-300 focus:border-[#032b53] focus:ring-[#032b53]" style={{ fontFamily: "DM Sans, sans-serif" }} value={form.firstName} onChange={handleChange} required />
+                </div>
+                <div>
+                  <Label htmlFor="lastName" className="text-sm font-medium text-[#032b53]" style={{ fontFamily: "DM Sans, sans-serif" }}>Last Name</Label>
+                  <Input id="lastName" type="text" minLength={2} className="mt-1 border-gray-300 focus:border-[#032b53] focus:ring-[#032b53]" style={{ fontFamily: "DM Sans, sans-serif" }} value={form.lastName} onChange={handleChange} required />
+                </div>
+              </div>
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <Label htmlFor="email" className="text-sm font-medium text-[#032b53]" style={{ fontFamily: "DM Sans, sans-serif" }}>Email</Label>
+                  <Input id="email" type="email" className="mt-1 border-gray-300 focus:border-[#032b53] focus:ring-[#032b53]" style={{ fontFamily: "DM Sans, sans-serif" }} value={form.email} onChange={handleChange} required />
+                </div>
+                <div>
+                  <Label htmlFor="phone" className="text-sm font-medium text-[#032b53]" style={{ fontFamily: "DM Sans, sans-serif" }}>Phone Number</Label>
+                  <Input id="phone" type="tel" className="mt-1 border-gray-300 focus:border-[#032b53] focus:ring-[#032b53]" style={{ fontFamily: "DM Sans, sans-serif" }} value={form.phone} onChange={handleChange} required />
+                </div>
               </div>
               <div>
-                <Label htmlFor="phone" className="text-sm font-medium text-[#032b53]" style={{ fontFamily: "DM Sans, sans-serif" }}>Phone Number</Label>
-                <Input id="phone" type="tel" className="mt-1 border-gray-300 focus:border-[#032b53] focus:ring-[#032b53]" style={{ fontFamily: "DM Sans, sans-serif" }} value={form.phone} onChange={handleChange} required />
-              </div>
-            </div>
-            <div>
-              <Label htmlFor="address" className="text-sm font-medium text-[#032b53]" style={{ fontFamily: "DM Sans, sans-serif" }}>Home Address</Label>
-              {placesError ? (
-                <>
-                  <Input
-                    id="address"
-                    type="text"
-                    placeholder="Street address, City, ZIP"
-                    className="mt-1 border-gray-300 focus:border-[#032b53] focus:ring-[#032b53]"
-                    style={{ fontFamily: "DM Sans, sans-serif" }}
+                <Label htmlFor="address" className="text-sm font-medium text-[#032b53]" style={{ fontFamily: "DM Sans, sans-serif" }}>Home Address</Label>
+                {placesError ? (
+                  <>
+                    <Input
+                      id="address"
+                      type="text"
+                      placeholder="Street address, City, ZIP"
+                      className="mt-1 border-gray-300 focus:border-[#032b53] focus:ring-[#032b53]"
+                      style={{ fontFamily: "DM Sans, sans-serif" }}
+                      value={form.address}
+                      onChange={handleChange}
+                      required
+                    />
+                    <p className="text-xs text-red-600 mt-1">Address autocomplete is unavailable. Please enter your address manually.</p>
+                  </>
+                ) : (
+                  <PlacesAutocomplete
                     value={form.address}
-                    onChange={handleChange}
-                    required
-                  />
-                  <p className="text-xs text-red-600 mt-1">Address autocomplete is unavailable. Please enter your address manually.</p>
-                </>
-              ) : (
-                <PlacesAutocomplete
-                  value={form.address}
-                  onChange={(address: string) => setForm({ ...form, address })}
-                  onSelect={(address: string) => setForm({ ...form, address })}
-                  searchOptions={{ types: ["address"] }}
-                  googleCallbackName="initPlacesScript"
-                >
-                  {({
-                    getInputProps,
-                    suggestions,
-                    getSuggestionItemProps,
-                    loading,
-                  }: {
-                    getInputProps: (options?: any) => any;
-                    suggestions: readonly Suggestion[];
-                    getSuggestionItemProps: (suggestion: Suggestion, options?: any) => any;
-                    loading: boolean;
-                  }) => (
-                    <div>
-                      <Input
-                        {...getInputProps({
-                          id: "address",
-                          placeholder: "Street address, City, ZIP",
-                          className: "mt-1 border-gray-300 focus:border-[#032b53] focus:ring-[#032b53]",
-                          style: { fontFamily: "DM Sans, sans-serif" },
-                          required: true,
-                        })}
-                      />
-                      <div className="absolute z-10 bg-white border border-gray-200 rounded-md shadow-lg mt-1 w-full">
-                        {loading && <div className="px-3 py-2 text-gray-500">Loading...</div>}
-                        {suggestions.map((suggestion) => {
-                          const className = suggestion.active
-                            ? "px-3 py-2 cursor-pointer bg-[#fba0ab]/10 text-[#032b53]"
-                            : "px-3 py-2 cursor-pointer";
-                          return (
-                            <div
-                              {...getSuggestionItemProps(suggestion, { className })}
-                              key={suggestion.placeId}
-                            >
-                              {suggestion.description}
-                            </div>
-                          );
-                        })}
+                    onChange={(address: string) => setForm({ ...form, address })}
+                    onSelect={(address: string) => setForm({ ...form, address })}
+                    searchOptions={{ types: ["address"] }}
+                    googleCallbackName="initPlacesScript"
+                  >
+                    {({
+                      getInputProps,
+                      suggestions,
+                      getSuggestionItemProps,
+                      loading,
+                    }: {
+                      getInputProps: (options?: any) => any;
+                      suggestions: readonly Suggestion[];
+                      getSuggestionItemProps: (suggestion: Suggestion, options?: any) => any;
+                      loading: boolean;
+                    }) => (
+                      <div>
+                        <Input
+                          {...getInputProps({
+                            id: "address",
+                            placeholder: "Street address, City, ZIP",
+                            className: "mt-1 border-gray-300 focus:border-[#032b53] focus:ring-[#032b53]",
+                            style: { fontFamily: "DM Sans, sans-serif" },
+                            required: true,
+                          })}
+                        />
+                        <div className="absolute z-10 bg-white border border-gray-200 rounded-md shadow-lg mt-1 w-full">
+                          {loading && <div className="px-3 py-2 text-gray-500">Loading...</div>}
+                          {suggestions.map((suggestion) => {
+                            const className = suggestion.active
+                              ? "px-3 py-2 cursor-pointer bg-[#fba0ab]/10 text-[#032b53]"
+                              : "px-3 py-2 cursor-pointer";
+                            return (
+                              <div
+                                {...getSuggestionItemProps(suggestion, { className })}
+                                key={suggestion.placeId}
+                              >
+                                {suggestion.description}
+                              </div>
+                            );
+                          })}
+                        </div>
                       </div>
-                    </div>
-                  )}
-                </PlacesAutocomplete>
-              )}
-            </div>
-            <div>
-              <Label htmlFor="help" className="text-sm font-medium text-[#032b53]" style={{ fontFamily: "DM Sans, sans-serif" }}>How can we help?</Label>
-              <textarea id="help" rows={3} placeholder="Tell us about your home and what you need help with..." className="mt-1 w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-[#032b53] focus:border-[#032b53]" style={{ fontFamily: "DM Sans, sans-serif" }} value={form.help} onChange={handleChange} required />
-            </div>
-            <Button type="submit" className="w-full bg-[#fba0ab] hover:bg-[#fba0ab]/90 text-[#032b53] font-semibold py-3 rounded-lg" style={{ fontFamily: "DM Sans, sans-serif" }} disabled={loading}>
-              {loading ? "Submitting..." : "Get My Home Going"}
-            </Button>
-            {success && <p className="text-green-600 text-xs text-center">Thank you! We'll reach out within 1 business day.</p>}
-            {error && <p className="text-red-600 text-xs text-center">{error}</p>}
-            <p className="text-xs text-gray-500 text-center" style={{ fontFamily: "DM Sans, sans-serif" }}>
-              We'll reach out within 1 business day to schedule your free home assessment
-            </p>
-          </form>
+                    )}
+                  </PlacesAutocomplete>
+                )}
+              </div>
+              <div>
+                <Label htmlFor="help" className="text-sm font-medium text-[#032b53]" style={{ fontFamily: "DM Sans, sans-serif" }}>How can we help?</Label>
+                <textarea id="help" rows={3} placeholder="Tell us about your home and what you need help with..." className="mt-1 w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-[#032b53] focus:border-[#032b53]" style={{ fontFamily: "DM Sans, sans-serif" }} value={form.help} onChange={handleChange} required />
+              </div>
+              <Button type="submit" className="w-full bg-[#fba0ab] hover:bg-[#fba0ab]/90 text-[#032b53] font-semibold py-3 rounded-lg" style={{ fontFamily: "DM Sans, sans-serif" }} disabled={loading}>
+                {loading ? "Submitting..." : "Get My Home Going"}
+              </Button>
+              {error && <p className="text-red-600 text-xs text-center">{error}</p>}
+              <p className="text-xs text-gray-500 text-center" style={{ fontFamily: "DM Sans, sans-serif" }}>
+                We'll reach out within 1 business day to schedule your free home assessment
+              </p>
+            </form>
+          )}
         </div>
       </CardContent>
     </Card>
