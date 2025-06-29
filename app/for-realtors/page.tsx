@@ -170,7 +170,6 @@ export default function ForRealtorsPage() {
                 { icon: CheckCircle, text: "Seasonal maintenance reminders" },
                 { icon: Phone, text: "24/7 emergency coordination" },
                 { icon: Users, text: "Vetted vendors they can trust" },
-                { icon: Star, text: "One team to call instead of 12 contractors" },
               ].map((item, index) => (
                 <Card key={index} className="border-0 shadow-lg rounded-2xl overflow-hidden">
                   <CardContent className="p-6">
@@ -413,10 +412,31 @@ export default function ForRealtorsPage() {
                     Custom landing page with your branding
                   </p>
                   <Button
+                    asChild
                     variant="outline"
                     className="border-[#032b53] text-[#032b53] hover:bg-[#032b53] hover:text-white bg-transparent font-discount-bold"
                   >
-                    Request Access
+                    <a
+                      href={`mailto:hello@withhammys.com?subject=${encodeURIComponent("Hammy's Realtor Interest")}&body=${encodeURIComponent(
+                        `Hi Hammy's Team,
+
+I'm interested in getting access to the co-branded referral page and learning more about your Realtor program.
+
+My Name:
+My Brokerage:
+My Phone Number:
+My Email:
+
+Please let me know the next steps!
+
+Thank you,
+`
+                      )}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Request Access
+                    </a>
                   </Button>
                 </CardContent>
               </Card>
