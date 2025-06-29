@@ -12,7 +12,7 @@ export async function POST(req: NextRequest) {
 
   try {
     const body = await req.json();
-    const { firstName, lastName, email, phone, address, help } = body;
+    const { firstName, lastName, email, phone, address, help, type } = body;
 
     // Basic validation
     if (!firstName || !lastName || !email || !phone || !address || !help) {
@@ -32,7 +32,7 @@ export async function POST(req: NextRequest) {
       const credsPath = path.join(process.cwd(), "google-service-account.json");
       const creds = JSON.parse(fs.readFileSync(credsPath, "utf8"));
       const sheetId = process.env.GOOGLE_SHEET_ID;
-      const tabName = process.env.GOOGLE_SHEET_TAB;
+      const tabName = type === 'realtor' ? 'Sheet2' : process.env.GOOGLE_SHEET_TAB;
       const auth = new google.auth.GoogleAuth({
         credentials: creds,
         scopes: ["https://www.googleapis.com/auth/spreadsheets"],
