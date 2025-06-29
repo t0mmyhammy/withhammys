@@ -40,21 +40,18 @@ export default function ForRealtorsPage() {
             <Badge
               variant="secondary"
               className="mb-6 bg-[#fba0ab]/10 text-[#032b53] border-[#fba0ab]/20"
-              style={{ fontFamily: "DM Sans, sans-serif" }}
             >
               For Real Estate Professionals
             </Badge>
 
             <h1
               className="text-4xl md:text-6xl lg:text-7xl font-bold text-[#032b53] mb-6 leading-tight"
-              style={{ fontFamily: "Gotham Bold, sans-serif" }}
             >
               Make your buyers feel at home — faster.
             </h1>
 
             <p
               className="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed"
-              style={{ fontFamily: "DM Sans, sans-serif" }}
             >
               Hammy's handles the setup, maintenance, and vendor coordination new homeowners need, so your clients feel
               supported long after the paperwork's done.
@@ -63,16 +60,14 @@ export default function ForRealtorsPage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
                 size="lg"
-                className="bg-[#032b53] hover:bg-[#032b53]/90 text-white px-8 py-6 text-lg rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
-                style={{ fontFamily: "DM Sans, sans-serif" }}
+                className="bg-[#032b53] hover:bg-[#032b53]/90 text-white px-8 py-6 text-lg rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 font-discount-bold"
               >
                 Refer a Client
               </Button>
               <Button
                 size="lg"
                 variant="outline"
-                className="border-[#032b53] text-[#032b53] hover:bg-[#032b53] hover:text-white px-8 py-6 text-lg rounded-xl bg-transparent"
-                style={{ fontFamily: "DM Sans, sans-serif" }}
+                className="border-[#032b53] text-[#032b53] hover:bg-[#032b53] hover:text-white px-8 py-6 text-lg rounded-xl bg-transparent font-discount-bold"
               >
                 Book a 10-min Realtor Call
               </Button>
@@ -88,11 +83,10 @@ export default function ForRealtorsPage() {
             <div className="text-center mb-16">
               <h2
                 className="text-3xl md:text-4xl font-bold text-[#032b53] mb-4"
-                style={{ fontFamily: "Gotham Bold, sans-serif" }}
               >
                 Why Realtors Partner With Hammy's
               </h2>
-              <p className="text-xl text-gray-600 max-w-2xl mx-auto" style={{ fontFamily: "DM Sans, sans-serif" }}>
+              <p>
                 Turn closing day into the beginning of a lasting relationship
               </p>
             </div>
@@ -105,11 +99,10 @@ export default function ForRealtorsPage() {
                   </div>
                   <h3
                     className="text-xl font-bold text-[#032b53] mb-4"
-                    style={{ fontFamily: "Gotham Bold, sans-serif" }}
                   >
                     Trusted Extension of Your Brand
                   </h3>
-                  <p className="text-gray-600 leading-relaxed" style={{ fontFamily: "DM Sans, sans-serif" }}>
+                  <p className="text-gray-600 leading-relaxed">
                     We make you look good by helping buyers settle in with less stress — and no overwhelming to-do list.
                   </p>
                 </CardContent>
@@ -122,11 +115,10 @@ export default function ForRealtorsPage() {
                   </div>
                   <h3
                     className="text-xl font-bold text-[#032b53] mb-4"
-                    style={{ fontFamily: "Gotham Bold, sans-serif" }}
                   >
                     Stress-Free Hand-Offs
                   </h3>
-                  <p className="text-gray-600 leading-relaxed" style={{ fontFamily: "DM Sans, sans-serif" }}>
+                  <p className="text-gray-600 leading-relaxed">
                     We handle the real-life chaos: vendor setup, service scheduling, and post-close emergencies.
                   </p>
                 </CardContent>
@@ -139,11 +131,10 @@ export default function ForRealtorsPage() {
                   </div>
                   <h3
                     className="text-xl font-bold text-[#032b53] mb-4"
-                    style={{ fontFamily: "Gotham Bold, sans-serif" }}
                   >
                     Keep Your Relationships Warm
                   </h3>
-                  <p className="text-gray-600 leading-relaxed" style={{ fontFamily: "DM Sans, sans-serif" }}>
+                  <p className="text-gray-600 leading-relaxed">
                     Stay top of mind by offering something valuable after the deal is done.
                   </p>
                 </CardContent>
@@ -160,11 +151,10 @@ export default function ForRealtorsPage() {
             <div className="text-center mb-16">
               <h2
                 className="text-3xl md:text-4xl font-bold text-[#032b53] mb-4"
-                style={{ fontFamily: "Gotham Bold, sans-serif" }}
               >
                 What We Offer Your Buyers
               </h2>
-              <p className="text-xl text-gray-600 max-w-2xl mx-auto" style={{ fontFamily: "DM Sans, sans-serif" }}>
+              <p>
                 Everything new homeowners need to feel confident and cared for
               </p>
             </div>
@@ -185,7 +175,7 @@ export default function ForRealtorsPage() {
                       <div className="w-12 h-12 bg-[#fba0ab]/10 rounded-full flex items-center justify-center flex-shrink-0">
                         <item.icon className="w-6 h-6 text-[#032b53]" />
                       </div>
-                      <p className="text-gray-700 font-medium" style={{ fontFamily: "DM Sans, sans-serif" }}>
+                      <p className="text-gray-700 font-medium">
                         {item.text}
                       </p>
                     </div>
@@ -204,11 +194,10 @@ export default function ForRealtorsPage() {
             <div className="text-center mb-16">
               <h2
                 className="text-3xl md:text-4xl font-bold text-[#032b53] mb-4"
-                style={{ fontFamily: "Gotham Bold, sans-serif" }}
               >
                 How It Works (for You)
               </h2>
-              <p className="text-xl text-gray-600 max-w-2xl mx-auto" style={{ fontFamily: "DM Sans, sans-serif" }}>
+              <p>
                 Simple referral process that makes you look great
               </p>
             </div>
@@ -219,18 +208,16 @@ export default function ForRealtorsPage() {
                   <div className="w-16 h-16 bg-[#fba0ab]/10 rounded-full flex items-center justify-center mx-auto mb-6">
                     <span
                       className="text-2xl font-bold text-[#032b53]"
-                      style={{ fontFamily: "Gotham Bold, sans-serif" }}
                     >
                       1
                     </span>
                   </div>
                   <h3
                     className="text-xl font-bold text-[#032b53] mb-4"
-                    style={{ fontFamily: "Gotham Bold, sans-serif" }}
                   >
                     Refer a Client
                   </h3>
-                  <p className="text-gray-600 leading-relaxed" style={{ fontFamily: "DM Sans, sans-serif" }}>
+                  <p className="text-gray-600 leading-relaxed">
                     Send us a quick intro — we take it from there.
                   </p>
                 </CardContent>
@@ -241,18 +228,16 @@ export default function ForRealtorsPage() {
                   <div className="w-16 h-16 bg-[#fba0ab]/10 rounded-full flex items-center justify-center mx-auto mb-6">
                     <span
                       className="text-2xl font-bold text-[#032b53]"
-                      style={{ fontFamily: "Gotham Bold, sans-serif" }}
                     >
                       2
                     </span>
                   </div>
                   <h3
                     className="text-xl font-bold text-[#032b53] mb-4"
-                    style={{ fontFamily: "Gotham Bold, sans-serif" }}
                   >
                     We Onboard the Homeowner
                   </h3>
-                  <p className="text-gray-600 leading-relaxed" style={{ fontFamily: "DM Sans, sans-serif" }}>
+                  <p className="text-gray-600 leading-relaxed">
                     Our team handles the walkthrough, plan setup, and care calendar.
                   </p>
                 </CardContent>
@@ -263,18 +248,16 @@ export default function ForRealtorsPage() {
                   <div className="w-16 h-16 bg-[#fba0ab]/10 rounded-full flex items-center justify-center mx-auto mb-6">
                     <span
                       className="text-2xl font-bold text-[#032b53]"
-                      style={{ fontFamily: "Gotham Bold, sans-serif" }}
                     >
                       3
                     </span>
                   </div>
                   <h3
                     className="text-xl font-bold text-[#032b53] mb-4"
-                    style={{ fontFamily: "Gotham Bold, sans-serif" }}
                   >
                     You Stay in the Loop
                   </h3>
-                  <p className="text-gray-600 leading-relaxed" style={{ fontFamily: "DM Sans, sans-serif" }}>
+                  <p className="text-gray-600 leading-relaxed">
                     We'll keep you informed (with permission) and make you look great throughout.
                   </p>
                 </CardContent>
@@ -285,16 +268,14 @@ export default function ForRealtorsPage() {
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button
                   size="lg"
-                  className="bg-[#032b53] hover:bg-[#032b53]/90 text-white px-8 py-6 text-lg rounded-xl"
-                  style={{ fontFamily: "DM Sans, sans-serif" }}
+                  className="bg-[#032b53] hover:bg-[#032b53]/90 text-white px-8 py-6 text-lg rounded-xl font-discount-bold"
                 >
                   Get Realtor Welcome Kit
                 </Button>
                 <Button
                   size="lg"
                   variant="outline"
-                  className="border-[#032b53] text-[#032b53] hover:bg-[#032b53] hover:text-white px-8 py-6 text-lg rounded-xl bg-transparent"
-                  style={{ fontFamily: "DM Sans, sans-serif" }}
+                  className="border-[#032b53] text-[#032b53] hover:bg-[#032b53] hover:text-white px-8 py-6 text-lg rounded-xl bg-transparent font-discount-bold"
                 >
                   Schedule Intro Call
                 </Button>
@@ -311,7 +292,6 @@ export default function ForRealtorsPage() {
             <div className="text-center mb-16">
               <h2
                 className="text-3xl md:text-4xl font-bold text-[#032b53] mb-4"
-                style={{ fontFamily: "Gotham Bold, sans-serif" }}
               >
                 What Agents Are Saying
               </h2>
@@ -327,7 +307,6 @@ export default function ForRealtorsPage() {
                   </div>
                   <p
                     className="text-gray-700 mb-6 text-lg leading-relaxed"
-                    style={{ fontFamily: "DM Sans, sans-serif" }}
                   >
                     "Hammy's gave me something no other partner does — a way to show value after the closing table."
                   </p>
@@ -336,10 +315,10 @@ export default function ForRealtorsPage() {
                       D
                     </div>
                     <div>
-                      <p className="font-semibold text-[#032b53]" style={{ fontFamily: "DM Sans, sans-serif" }}>
+                      <p className="font-semibold text-[#032b53]">
                         Dan G.
                       </p>
-                      <p className="text-gray-500 text-sm" style={{ fontFamily: "DM Sans, sans-serif" }}>
+                      <p className="text-gray-500 text-sm">
                         DOBI Realty
                       </p>
                     </div>
@@ -356,7 +335,6 @@ export default function ForRealtorsPage() {
                   </div>
                   <p
                     className="text-gray-700 mb-6 text-lg leading-relaxed"
-                    style={{ fontFamily: "DM Sans, sans-serif" }}
                   >
                     "My clients trust me, and I trust Hammy's. It's one of the easiest handoffs I've ever made."
                   </p>
@@ -365,10 +343,10 @@ export default function ForRealtorsPage() {
                       N
                     </div>
                     <div>
-                      <p className="font-semibold text-[#032b53]" style={{ fontFamily: "DM Sans, sans-serif" }}>
+                      <p className="font-semibold text-[#032b53]">
                         Natalie V.
                       </p>
-                      <p className="text-gray-500 text-sm" style={{ fontFamily: "DM Sans, sans-serif" }}>
+                      <p className="text-gray-500 text-sm">
                         KW Domain
                       </p>
                     </div>
@@ -387,11 +365,10 @@ export default function ForRealtorsPage() {
             <div className="text-center mb-16">
               <h2
                 className="text-3xl md:text-4xl font-bold text-[#032b53] mb-4"
-                style={{ fontFamily: "Gotham Bold, sans-serif" }}
               >
                 Marketing Materials & Resources
               </h2>
-              <p className="text-xl text-gray-600 max-w-2xl mx-auto" style={{ fontFamily: "DM Sans, sans-serif" }}>
+              <p>
                 Everything you need to start referring clients today
               </p>
             </div>
@@ -404,17 +381,15 @@ export default function ForRealtorsPage() {
                   </div>
                   <h3
                     className="text-xl font-bold text-[#032b53] mb-4"
-                    style={{ fontFamily: "Gotham Bold, sans-serif" }}
                   >
                     Realtor One-Pager
                   </h3>
-                  <p className="text-gray-600 leading-relaxed mb-6" style={{ fontFamily: "DM Sans, sans-serif" }}>
+                  <p className="text-gray-600 leading-relaxed mb-6">
                     Quick overview to share with clients
                   </p>
                   <Button
                     variant="outline"
-                    className="border-[#032b53] text-[#032b53] hover:bg-[#032b53] hover:text-white bg-transparent"
-                    style={{ fontFamily: "DM Sans, sans-serif" }}
+                    className="border-[#032b53] text-[#032b53] hover:bg-[#032b53] hover:text-white bg-transparent font-discount-bold"
                   >
                     Download PDF
                   </Button>
@@ -428,17 +403,15 @@ export default function ForRealtorsPage() {
                   </div>
                   <h3
                     className="text-xl font-bold text-[#032b53] mb-4"
-                    style={{ fontFamily: "Gotham Bold, sans-serif" }}
                   >
                     Co-Branded Referral Page
                   </h3>
-                  <p className="text-gray-600 leading-relaxed mb-6" style={{ fontFamily: "DM Sans, sans-serif" }}>
+                  <p className="text-gray-600 leading-relaxed mb-6">
                     Custom landing page with your branding
                   </p>
                   <Button
                     variant="outline"
-                    className="border-[#032b53] text-[#032b53] hover:bg-[#032b53] hover:text-white bg-transparent"
-                    style={{ fontFamily: "DM Sans, sans-serif" }}
+                    className="border-[#032b53] text-[#032b53] hover:bg-[#032b53] hover:text-white bg-transparent font-discount-bold"
                   >
                     Request Access
                   </Button>
@@ -452,17 +425,15 @@ export default function ForRealtorsPage() {
                   </div>
                   <h3
                     className="text-xl font-bold text-[#032b53] mb-4"
-                    style={{ fontFamily: "Gotham Bold, sans-serif" }}
                   >
                     Realtor Training Deck
                   </h3>
-                  <p className="text-gray-600 leading-relaxed mb-6" style={{ fontFamily: "DM Sans, sans-serif" }}>
+                  <p className="text-gray-600 leading-relaxed mb-6">
                     Present Hammy's to your team
                   </p>
                   <Button
                     variant="outline"
-                    className="border-[#032b53] text-[#032b53] hover:bg-[#032b53] hover:text-white bg-transparent"
-                    style={{ fontFamily: "DM Sans, sans-serif" }}
+                    className="border-[#032b53] text-[#032b53] hover:bg-[#032b53] hover:text-white bg-transparent font-discount-bold"
                   >
                     View Slides
                   </Button>
@@ -473,8 +444,7 @@ export default function ForRealtorsPage() {
             <div className="text-center mt-12">
               <Button
                 size="lg"
-                className="bg-[#fba0ab] hover:bg-[#fba0ab]/90 text-[#032b53] px-8 py-6 text-lg rounded-xl"
-                style={{ fontFamily: "DM Sans, sans-serif" }}
+                className="bg-[#fba0ab] hover:bg-[#fba0ab]/90 text-[#032b53] px-8 py-6 text-lg rounded-xl font-discount-bold"
               >
                 Invite Me to Your Office Meeting
               </Button>
@@ -490,11 +460,10 @@ export default function ForRealtorsPage() {
             <div className="text-center mb-16">
               <h2
                 className="text-3xl md:text-4xl font-bold text-[#032b53] mb-4"
-                style={{ fontFamily: "Gotham Bold, sans-serif" }}
               >
                 FAQ for Agents
               </h2>
-              <p className="text-xl text-gray-600" style={{ fontFamily: "DM Sans, sans-serif" }}>
+              <p>
                 Common questions from real estate professionals
               </p>
             </div>
@@ -531,11 +500,10 @@ export default function ForRealtorsPage() {
                   <CardContent className="p-6">
                     <h3
                       className="text-lg font-bold text-[#032b53] mb-3"
-                      style={{ fontFamily: "Gotham Bold, sans-serif" }}
                     >
                       {faq.question}
                     </h3>
-                    <p className="text-gray-600 leading-relaxed" style={{ fontFamily: "DM Sans, sans-serif" }}>
+                    <p className="text-gray-600 leading-relaxed">
                       {faq.answer}
                     </p>
                   </CardContent>
@@ -550,30 +518,28 @@ export default function ForRealtorsPage() {
       <section className="py-20 bg-[#032b53] text-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6" style={{ fontFamily: "Gotham Bold, sans-serif" }}>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">
               Give your buyers more than a closing gift. Give them peace of mind.
             </h2>
-            <p className="text-xl mb-8 opacity-90 max-w-2xl mx-auto" style={{ fontFamily: "DM Sans, sans-serif" }}>
+            <p className="text-xl mb-8 opacity-90 max-w-2xl mx-auto">
               Join Metro Detroit's top agents who trust Hammy's to extend their service beyond closing day.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
                 size="lg"
-                className="bg-[#fba0ab] hover:bg-[#fba0ab]/90 text-[#032b53] px-8 py-6 text-lg rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 font-semibold"
-                style={{ fontFamily: "DM Sans, sans-serif" }}
+                className="bg-[#fba0ab] hover:bg-[#fba0ab]/90 text-[#032b53] px-8 py-6 text-lg rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 font-discount-bold"
               >
                 Start Referring Clients
               </Button>
               <Button
                 size="lg"
                 variant="outline"
-                className="border-white text-white hover:bg-white hover:text-[#032b53] px-8 py-6 text-lg rounded-xl bg-transparent"
-                style={{ fontFamily: "DM Sans, sans-serif" }}
+                className="border-white text-white hover:bg-white hover:text-[#032b53] px-8 py-6 text-lg rounded-xl bg-transparent font-discount-bold"
               >
                 Book Realtor Call
               </Button>
             </div>
-            <p className="text-sm mt-4 opacity-75" style={{ fontFamily: "DM Sans, sans-serif" }}>
+            <p className="text-sm mt-4 opacity-75">
               No cost to you • Co-branded materials included • Referral incentives available
             </p>
           </div>
@@ -588,11 +554,10 @@ export default function ForRealtorsPage() {
               <div className="mb-6 md:mb-0">
                 <h3
                   className="text-2xl font-bold text-[#032b53] mb-2"
-                  style={{ fontFamily: "Gotham Bold, sans-serif" }}
                 >
                   Hammy's
                 </h3>
-                <p className="text-gray-600" style={{ fontFamily: "DM Sans, sans-serif" }}>
+                <p>
                   We sweat the small stuff so you can bring home the bacon.
                 </p>
               </div>
@@ -602,28 +567,24 @@ export default function ForRealtorsPage() {
                   <Link
                     href="/about"
                     className="text-gray-600 hover:text-[#032b53] transition-colors"
-                    style={{ fontFamily: "DM Sans, sans-serif" }}
                   >
                     About
                   </Link>
                   <Link
                     href="/faqs"
                     className="text-gray-600 hover:text-[#032b53] transition-colors"
-                    style={{ fontFamily: "DM Sans, sans-serif" }}
                   >
                     FAQs
                   </Link>
                   <Link
                     href="/privacy"
                     className="text-gray-600 hover:text-[#032b53] transition-colors"
-                    style={{ fontFamily: "DM Sans, sans-serif" }}
                   >
                     Privacy
                   </Link>
                   <Link
                     href="/contact"
                     className="text-gray-600 hover:text-[#032b53] transition-colors"
-                    style={{ fontFamily: "DM Sans, sans-serif" }}
                   >
                     Contact
                   </Link>
@@ -648,7 +609,6 @@ export default function ForRealtorsPage() {
 
             <div
               className="border-t border-gray-200 mt-8 pt-8 text-center text-sm text-gray-500"
-              style={{ fontFamily: "DM Sans, sans-serif" }}
             >
               <p>&copy; {new Date().getFullYear()} Hammy's Home Experts. All rights reserved.</p>
             </div>

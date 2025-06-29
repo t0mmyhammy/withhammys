@@ -44,35 +44,31 @@ export default function HammysLanding() {
           <div className="max-w-4xl mx-auto text-center">
             <Badge
               className="mb-6 bg-[#fba0ab]/10 text-[#032b53] border-[#fba0ab]/20"
-              style={{ fontFamily: "DM Sans, sans-serif" }}
             >
               For new homeowners in Metro Detroit
             </Badge>
 
             <h1
               className="text-4xl md:text-6xl lg:text-7xl font-bold text-[#032b53] mb-6 leading-tight"
-              style={{ fontFamily: "Gotham Bold, sans-serif" }}
             >
               Your home's trusted partner from day one.
             </h1>
 
             <p
               className="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed"
-              style={{ fontFamily: "DM Sans, sans-serif" }}
             >
               From filters to furnaces, we handle the to-dos that come with your new home — so you can actually enjoy
               it.
             </p>
 
             <Button
-              className="bg-[#032b53] hover:bg-[#032b53]/90 text-white px-8 py-6 text-lg rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
-              style={{ fontFamily: "DM Sans, sans-serif" }}
+              className="bg-[#032b53] hover:bg-[#032b53]/90 text-white px-8 py-6 text-lg rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 font-discount-bold"
               onClick={scrollToForm}
             >
               Get My Home Plan
             </Button>
 
-            <p className="text-sm mt-4 text-gray-500" style={{ fontFamily: "DM Sans, sans-serif" }}>
+            <p className="text-sm mt-4 text-gray-500">
               No pressure. No contracts. Just help when you need it.
             </p>
           </div>
@@ -86,11 +82,10 @@ export default function HammysLanding() {
             <div className="text-center mb-16">
               <h2
                 className="text-3xl md:text-4xl font-bold text-[#032b53] mb-4"
-                style={{ fontFamily: "Gotham Bold, sans-serif" }}
               >
                 How We Roll
               </h2>
-              <p className="text-xl text-gray-600 max-w-2xl mx-auto" style={{ fontFamily: "DM Sans, sans-serif" }}>
+              <p className="text-xl text-gray-600 max-w-2xl mx-auto">
                 Three steps to take homeownership off your Sunday to-do list
               </p>
             </div>
@@ -103,11 +98,10 @@ export default function HammysLanding() {
                   </div>
                   <h3
                     className="text-xl font-bold text-[#032b53] mb-4"
-                    style={{ fontFamily: "Gotham Bold, sans-serif" }}
                   >
                     We Come to You
                   </h3>
-                  <p className="text-gray-600 leading-relaxed" style={{ fontFamily: "DM Sans, sans-serif" }}>
+                  <p className="text-gray-600 leading-relaxed">
                     We visit your home, take inventory of what you've got, and figure out how to keep it all running
                     smoothly. No clipboard theatrics—just a solid plan.
                   </p>
@@ -121,11 +115,10 @@ export default function HammysLanding() {
                   </div>
                   <h3
                     className="text-xl font-bold text-[#032b53] mb-4"
-                    style={{ fontFamily: "Gotham Bold, sans-serif" }}
                   >
                     You Get Your Game Plan
                   </h3>
-                  <p className="text-gray-600 leading-relaxed" style={{ fontFamily: "DM Sans, sans-serif" }}>
+                  <p className="text-gray-600 leading-relaxed">
                     Custom schedule with the right tasks at the right times. Seasonal stuff, preventive care, trusted
                     pros on speed dial—all tailored to your home and budget.
                   </p>
@@ -139,11 +132,10 @@ export default function HammysLanding() {
                   </div>
                   <h3
                     className="text-xl font-bold text-[#032b53] mb-4"
-                    style={{ fontFamily: "Gotham Bold, sans-serif" }}
                   >
                     We Handle the Rest
                   </h3>
-                  <p className="text-gray-600 leading-relaxed" style={{ fontFamily: "DM Sans, sans-serif" }}>
+                  <p className="text-gray-600 leading-relaxed">
                     From routine check-ins to "oh no!" moments, we coordinate everything. You get updates, not
                     headaches. Our trusted vendors deliver quality service and fair prices.
                   </p>
@@ -160,11 +152,10 @@ export default function HammysLanding() {
           <div className="max-w-4xl mx-auto text-center">
             <h2
               className="text-3xl md:text-4xl font-bold text-[#032b53] mb-8"
-              style={{ fontFamily: "Gotham Bold, sans-serif" }}
             >
               Why We Exist
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-12" style={{ fontFamily: "DM Sans, sans-serif" }}>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-12">
               Because homeownership shouldn't feel like a part-time job you didn't apply for
             </p>
 
@@ -173,10 +164,10 @@ export default function HammysLanding() {
                 <div className="w-12 h-12 bg-[#fba0ab]/10 rounded-full flex items-center justify-center mx-auto mb-4">
                   <CheckCircle className="w-6 h-6 text-[#032b53]" />
                 </div>
-                <h3 className="text-lg font-bold text-[#032b53] mb-2" style={{ fontFamily: "Gotham Bold, sans-serif" }}>
+                <h3 className="text-lg font-bold text-[#032b53] mb-2">
                   No Surprises
                 </h3>
-                <p className="text-gray-600" style={{ fontFamily: "DM Sans, sans-serif" }}>
+                <p className="text-gray-600">
                   Know what's in your home, what it needs, and what it'll cost. We document everything so you're never
                   caught off guard.
                 </p>
@@ -186,10 +177,10 @@ export default function HammysLanding() {
                 <div className="w-12 h-12 bg-[#fba0ab]/10 rounded-full flex items-center justify-center mx-auto mb-4">
                   <Calendar className="w-6 h-6 text-[#032b53]" />
                 </div>
-                <h3 className="text-lg font-bold text-[#032b53] mb-2" style={{ fontFamily: "Gotham Bold, sans-serif" }}>
+                <h3 className="text-lg font-bold text-[#032b53] mb-2">
                   Stay Ahead
                 </h3>
-                <p className="text-gray-600" style={{ fontFamily: "DM Sans, sans-serif" }}>
+                <p className="text-gray-600">
                   Fix small things before they become big problems. When stuff does break (and it will), you'll know
                   exactly what to do.
                 </p>
@@ -199,10 +190,10 @@ export default function HammysLanding() {
                 <div className="w-12 h-12 bg-[#fba0ab]/10 rounded-full flex items-center justify-center mx-auto mb-4">
                   <Shield className="w-6 h-6 text-[#032b53]" />
                 </div>
-                <h3 className="text-lg font-bold text-[#032b53] mb-2" style={{ fontFamily: "Gotham Bold, sans-serif" }}>
+                <h3 className="text-lg font-bold text-[#032b53] mb-2">
                   One Call Does It All
                 </h3>
-                <p className="text-gray-600" style={{ fontFamily: "DM Sans, sans-serif" }}>
+                <p className="text-gray-600">
                   Stop playing phone tag with contractors. We coordinate everything so you don't have to become a
                   project manager.
                 </p>
@@ -219,11 +210,10 @@ export default function HammysLanding() {
             <div className="text-center mb-16">
               <h2
                 className="text-3xl md:text-4xl font-bold text-[#032b53] mb-4"
-                style={{ fontFamily: "Gotham Bold, sans-serif" }}
               >
                 What People Are Saying
               </h2>
-              <p className="text-gray-600 leading-relaxed" style={{ fontFamily: "DM Sans, sans-serif" }}>
+              <p className="text-gray-600 leading-relaxed">
                 Real feedback from real homeowners who've got their weekends back
               </p>
             </div>
@@ -238,7 +228,6 @@ export default function HammysLanding() {
                   </div>
                   <p
                     className="text-gray-700 mb-6 text-lg leading-relaxed"
-                    style={{ fontFamily: "DM Sans, sans-serif" }}
                   >
                     "I didn't lift a finger. Hammy's handled the filters, the gutters — even followed up after the rain.
                     It's like having a home manager who actually cares."
@@ -248,10 +237,10 @@ export default function HammysLanding() {
                       M
                     </div>
                     <div>
-                      <p className="font-semibold text-[#032b53]" style={{ fontFamily: "DM Sans, sans-serif" }}>
+                      <p className="font-semibold text-[#032b53]">
                         Mark V.
                       </p>
-                      <p className="text-gray-500 text-sm" style={{ fontFamily: "DM Sans, sans-serif" }}>
+                      <p className="text-gray-500 text-sm">
                         Rochester Homeowner
                       </p>
                     </div>
@@ -268,7 +257,6 @@ export default function HammysLanding() {
                   </div>
                   <p
                     className="text-gray-700 mb-6 text-lg leading-relaxed"
-                    style={{ fontFamily: "DM Sans, sans-serif" }}
                   >
                     "We thought we had it under control — until Hammy's showed us what we were missing. Now our home
                     actually runs like a system."
@@ -278,10 +266,10 @@ export default function HammysLanding() {
                       N
                     </div>
                     <div>
-                      <p className="font-semibold text-[#032b53]" style={{ fontFamily: "DM Sans, sans-serif" }}>
+                      <p className="font-semibold text-[#032b53]">
                         Mike & Natalie G.
                       </p>
-                      <p className="text-gray-500 text-sm" style={{ fontFamily: "DM Sans, sans-serif" }}>
+                      <p className="text-gray-500 text-sm">
                         Birmingham Homeowners
                       </p>
                     </div>
@@ -298,7 +286,6 @@ export default function HammysLanding() {
                   </div>
                   <p
                     className="text-gray-700 mb-6 text-lg leading-relaxed"
-                    style={{ fontFamily: "DM Sans, sans-serif" }}
                   >
                     "When my sump pump died, Hammy's had someone at my door in two hours. I didn't even have time to
                     panic — they already had it covered."
@@ -308,10 +295,10 @@ export default function HammysLanding() {
                       D
                     </div>
                     <div>
-                      <p className="font-semibold text-[#032b53]" style={{ fontFamily: "DM Sans, sans-serif" }}>
+                      <p className="font-semibold text-[#032b53]">
                         David B.
                       </p>
-                      <p className="text-gray-500 text-sm" style={{ fontFamily: "DM Sans, sans-serif" }}>
+                      <p className="text-gray-500 text-sm">
                         Bloomfield Hills Homeowner
                       </p>
                     </div>
@@ -330,16 +317,14 @@ export default function HammysLanding() {
             <div className="text-center mb-16">
               <h2
                 className="text-3xl md:text-4xl font-bold text-[#032b53] mb-8"
-                style={{ fontFamily: "Gotham Bold, sans-serif" }}
               >
                 Where We Work
               </h2>
-              <p className="text-xl text-gray-600 mb-4" style={{ fontFamily: "DM Sans, sans-serif" }}>
+              <p className="text-xl text-gray-600 mb-4">
                 Currently serving Metro Detroit's finest neighborhoods
               </p>
               <Badge
                 className="bg-[#fba0ab]/10 text-[#032b53] border-[#fba0ab]/20"
-                style={{ fontFamily: "DM Sans, sans-serif" }}
               >
                 20+ families trust us with their homes
               </Badge>
@@ -352,7 +337,6 @@ export default function HammysLanding() {
                   <div className="bg-[#032b53] text-white p-6">
                     <h3
                       className="text-xl font-bold flex items-center gap-2"
-                      style={{ fontFamily: "Gotham Bold, sans-serif" }}
                     >
                       <MapPin className="w-5 h-5" />
                       Active Service Areas
@@ -372,7 +356,7 @@ export default function HammysLanding() {
                       ].map((city, index) => (
                         <div key={index} className="flex items-center gap-2">
                           <CheckCircle className="w-4 h-4 text-[#032b53]" />
-                          <span className="text-gray-700" style={{ fontFamily: "DM Sans, sans-serif" }}>
+                          <span className="text-gray-700">
                             {city}
                           </span>
                         </div>
@@ -393,11 +377,10 @@ export default function HammysLanding() {
             <div className="text-center mb-16">
               <h2
                 className="text-3xl md:text-4xl font-bold text-[#032b53] mb-4"
-                style={{ fontFamily: "Gotham Bold, sans-serif" }}
               >
                 Common Questions
               </h2>
-              <p className="text-xl text-gray-600" style={{ fontFamily: "DM Sans, sans-serif" }}>
+              <p className="text-xl text-gray-600">
                 The stuff people actually want to know
               </p>
             </div>
@@ -431,19 +414,23 @@ export default function HammysLanding() {
                     answer:
                       "Great! We're happy to coordinate with your existing team. Over time, we'll make sure they're still delivering quality work. If not, our trusted network is ready with transparent pricing.",
                   },
+                  {
+                    question: "Is this just for new homeowners?",
+                    answer:
+                      "No, we're happy to help you get your home running smoothly. We recommend starting with a formal inspection to get a baseline of your home's condition if its been more than 3 years. This can be discussed during your home visit.",
+                  },
                 ].map((faq, index) => (
                   <details key={index} className="group">
                     <summary className="flex justify-between items-center cursor-pointer p-6 bg-white border border-gray-200 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300">
                       <h3
                         className="text-lg font-bold text-[#032b53]"
-                        style={{ fontFamily: "Gotham Bold, sans-serif" }}
                       >
                         {faq.question}
                       </h3>
                       <ChevronDown className="w-5 h-5 text-[#032b53] group-open:rotate-180 transition-transform duration-200" />
                     </summary>
                     <div className="p-6 pt-0">
-                      <p className="text-gray-600 leading-relaxed" style={{ fontFamily: "DM Sans, sans-serif" }}>
+                      <p className="text-gray-600 leading-relaxed">
                         {faq.answer}
                       </p>
                     </div>
@@ -464,21 +451,20 @@ export default function HammysLanding() {
       <section className="py-20 bg-[#032b53] text-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6" style={{ fontFamily: "Gotham Bold, sans-serif" }}>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">
               Ready to Get Your Weekends Back?
             </h2>
-            <p className="text-xl mb-8 opacity-90 max-w-2xl mx-auto" style={{ fontFamily: "DM Sans, sans-serif" }}>
+            <p className="text-xl mb-8 opacity-90 max-w-2xl mx-auto">
               Join our Fall cohort and get your home running like a system. Limited spots available for new homeowners
               who want to do this right from day one.
             </p>
             <Button
-              className="bg-[#fba0ab] hover:bg-[#fba0ab]/90 text-[#032b53] px-8 py-6 text-lg rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 font-semibold"
-              style={{ fontFamily: "DM Sans, sans-serif" }}
+              className="bg-[#fba0ab] hover:bg-[#fba0ab]/90 text-[#032b53] px-8 py-6 text-lg rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 font-discount-bold"
               onClick={scrollToForm}
             >
               Get My Home Plan
             </Button>
-            <p className="text-sm mt-4 opacity-75" style={{ fontFamily: "DM Sans, sans-serif" }}>
+            <p className="text-sm mt-4 opacity-75">
               Free home assessment • Custom plan • No pressure, just help
             </p>
           </div>
@@ -493,7 +479,6 @@ export default function HammysLanding() {
               <div className="mb-6 md:mb-0">
                 <h3
                   className="text-2xl font-bold text-[#032b53] mb-2"
-                  style={{ fontFamily: "Gotham Bold, sans-serif" }}
                 >
                   <Image
                     src="/logos/hammy-stacked-logo.svg"
@@ -501,10 +486,10 @@ export default function HammysLanding() {
                     width={180}
                     height={40}
                     priority
-                    style={{ display: "inline-block" }}
+                    style={{ width: 180, height: 'auto', display: 'inline-block' }}
                   />
                 </h3>
-                <p className="text-gray-600" style={{ fontFamily: "DM Sans, sans-serif" }}>
+                <p className="text-gray-600">
                   We sweat the small stuff so you can bring home the bacon.
                 </p>
               </div>
@@ -514,28 +499,24 @@ export default function HammysLanding() {
                   <Link
                     href="/about"
                     className="text-gray-600 hover:text-[#032b53] transition-colors"
-                    style={{ fontFamily: "DM Sans, sans-serif" }}
                   >
                     About
                   </Link>
                   <Link
                     href="#faq"
                     className="text-gray-600 hover:text-[#032b53] transition-colors"
-                    style={{ fontFamily: "DM Sans, sans-serif" }}
                   >
                     FAQs
                   </Link>
                   <Link
                     href="/privacy"
                     className="text-gray-600 hover:text-[#032b53] transition-colors"
-                    style={{ fontFamily: "DM Sans, sans-serif" }}
                   >
                     Privacy
                   </Link>
                   <Link
                     href="/contact"
                     className="text-gray-600 hover:text-[#032b53] transition-colors"
-                    style={{ fontFamily: "DM Sans, sans-serif" }}
                   >
                     Contact
                   </Link>
@@ -560,7 +541,6 @@ export default function HammysLanding() {
 
             <div
               className="border-t border-gray-200 mt-8 pt-8 text-center text-sm text-gray-500"
-              style={{ fontFamily: "DM Sans, sans-serif" }}
             >
               <p>&copy; {new Date().getFullYear()} Hammy's Home Experts. All rights reserved.</p>
             </div>

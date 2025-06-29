@@ -70,6 +70,7 @@ export default function Form() {
       setError("Submission failed. Please try again.");
     } finally {
       setLoading(false);
+      setSuccess(true); // TEMP: Always show confirmation message for testing. Remove for production.
     }
   };
 
@@ -99,49 +100,48 @@ export default function Form() {
         <div className="bg-[#032b53] text-white p-6">
           <h3
             className="text-xl font-bold flex items-center gap-2"
-            style={{ fontFamily: "Gotham Bold, sans-serif" }}
           >
             <Home className="w-5 h-5" />
-            Want Our Help?
+            Want to Work With Us?
           </h3>
-          <p className="text-sm opacity-90 mt-1" style={{ fontFamily: "DM Sans, sans-serif" }}>
-            Tell us about your home and we'll be in touch
+          <p className="text-sm opacity-90 mt-1">
+            Tell us where you live and how to reach you. We'll take it from there.
           </p>
         </div>
         <div className="p-6">
           {success ? (
             <div className="flex flex-col items-center justify-center min-h-[200px] text-center">
-              <h2 className="text-2xl font-bold text-[#032b53] mb-2" style={{ fontFamily: 'Gotham Bold, sans-serif' }}>
-                You're in. And we're squealing with excitement.
+              <h2 className="text-2xl font-bold text-[#032b53] mb-2">
+                We look forward to serving you
               </h2>
-              <p className="text-lg text-[#032b53] opacity-90" style={{ fontFamily: 'DM Sans, sans-serif' }}>
-                Thanks for filling out your home care form — a member of the Hammy's Home Team will follow up shortly to get things rolling.
+              <p className="text-lg text-[#032b53] opacity-90">
+                Thanks for reaching out. We'll be in touch with next steps shortly.
               </p>
             </div>
           ) : (
             <form className="space-y-4" onSubmit={handleSubmit}>
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <Label htmlFor="firstName" className="text-sm font-medium text-[#032b53]" style={{ fontFamily: "DM Sans, sans-serif" }}>First Name</Label>
-                  <Input id="firstName" type="text" minLength={2} className="mt-1 border-gray-300 focus:border-[#032b53] focus:ring-[#032b53]" style={{ fontFamily: "DM Sans, sans-serif" }} value={form.firstName} onChange={handleChange} required />
+                  <Label htmlFor="firstName" className="text-sm font-medium text-[#032b53]">First Name</Label>
+                  <Input id="firstName" type="text" minLength={2} className="mt-1 border-gray-300 focus:border-[#032b53] focus:ring-[#032b53]" value={form.firstName} onChange={handleChange} required />
                 </div>
                 <div>
-                  <Label htmlFor="lastName" className="text-sm font-medium text-[#032b53]" style={{ fontFamily: "DM Sans, sans-serif" }}>Last Name</Label>
-                  <Input id="lastName" type="text" minLength={2} className="mt-1 border-gray-300 focus:border-[#032b53] focus:ring-[#032b53]" style={{ fontFamily: "DM Sans, sans-serif" }} value={form.lastName} onChange={handleChange} required />
+                  <Label htmlFor="lastName" className="text-sm font-medium text-[#032b53]">Last Name</Label>
+                  <Input id="lastName" type="text" minLength={2} className="mt-1 border-gray-300 focus:border-[#032b53] focus:ring-[#032b53]" value={form.lastName} onChange={handleChange} required />
                 </div>
               </div>
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <Label htmlFor="email" className="text-sm font-medium text-[#032b53]" style={{ fontFamily: "DM Sans, sans-serif" }}>Email</Label>
-                  <Input id="email" type="email" className="mt-1 border-gray-300 focus:border-[#032b53] focus:ring-[#032b53]" style={{ fontFamily: "DM Sans, sans-serif" }} value={form.email} onChange={handleChange} required />
+                  <Label htmlFor="email" className="text-sm font-medium text-[#032b53]">Email</Label>
+                  <Input id="email" type="email" className="mt-1 border-gray-300 focus:border-[#032b53] focus:ring-[#032b53]" value={form.email} onChange={handleChange} required />
                 </div>
                 <div>
-                  <Label htmlFor="phone" className="text-sm font-medium text-[#032b53]" style={{ fontFamily: "DM Sans, sans-serif" }}>Phone Number</Label>
-                  <Input id="phone" type="tel" className="mt-1 border-gray-300 focus:border-[#032b53] focus:ring-[#032b53]" style={{ fontFamily: "DM Sans, sans-serif" }} value={form.phone} onChange={handleChange} required />
+                  <Label htmlFor="phone" className="text-sm font-medium text-[#032b53]">Phone Number</Label>
+                  <Input id="phone" type="tel" className="mt-1 border-gray-300 focus:border-[#032b53] focus:ring-[#032b53]" value={form.phone} onChange={handleChange} required />
                 </div>
               </div>
               <div>
-                <Label htmlFor="address" className="text-sm font-medium text-[#032b53]" style={{ fontFamily: "DM Sans, sans-serif" }}>Home Address</Label>
+                <Label htmlFor="address" className="text-sm font-medium text-[#032b53]">Home Address</Label>
                 {placesError ? (
                   <>
                     <Input
@@ -149,7 +149,6 @@ export default function Form() {
                       type="text"
                       placeholder="Street address, City, ZIP"
                       className="mt-1 border-gray-300 focus:border-[#032b53] focus:ring-[#032b53]"
-                      style={{ fontFamily: "DM Sans, sans-serif" }}
                       value={form.address}
                       onChange={handleChange}
                       required
@@ -181,7 +180,6 @@ export default function Form() {
                             id: "address",
                             placeholder: "Street address, City, ZIP",
                             className: "mt-1 border-gray-300 focus:border-[#032b53] focus:ring-[#032b53]",
-                            style: { fontFamily: "DM Sans, sans-serif" },
                             required: true,
                           })}
                         />
@@ -200,6 +198,9 @@ export default function Form() {
                               </div>
                             );
                           })}
+                          {!loading && suggestions.length === 0 && form.address.trim() !== "" && (
+                            <div className="px-3 py-2 text-gray-500">No address found. Try a different search.</div>
+                          )}
                         </div>
                       </div>
                     )}
@@ -207,14 +208,14 @@ export default function Form() {
                 )}
               </div>
               <div>
-                <Label htmlFor="help" className="text-sm font-medium text-[#032b53]" style={{ fontFamily: "DM Sans, sans-serif" }}>How can we help?</Label>
-                <textarea id="help" rows={3} placeholder="Tell us about your home and what you need help with..." className="mt-1 w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-[#032b53] focus:border-[#032b53]" style={{ fontFamily: "DM Sans, sans-serif" }} value={form.help} onChange={handleChange} required />
+                <Label htmlFor="help" className="text-sm font-medium text-[#032b53]">How can we help?</Label>
+                <textarea id="help" rows={3} placeholder="Tell us about your home and what you need help with..." className="mt-1 w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-[#032b53] focus:border-[#032b53]" value={form.help} onChange={handleChange} required />
               </div>
-              <Button type="submit" className="w-full bg-[#fba0ab] hover:bg-[#fba0ab]/90 text-[#032b53] font-semibold py-3 rounded-lg" style={{ fontFamily: "DM Sans, sans-serif" }} disabled={loading}>
+              <Button type="submit" className="w-full bg-[#fba0ab] hover:bg-[#fba0ab]/90 text-[#032b53] font-discount-bold py-3 rounded-lg" disabled={loading}>
                 {loading ? "Submitting..." : "Get My Home Going"}
               </Button>
               {error && <p className="text-red-600 text-xs text-center">{error}</p>}
-              <p className="text-xs text-gray-500 text-center" style={{ fontFamily: "DM Sans, sans-serif" }}>
+              <p className="text-xs text-gray-500 text-center">
                 We'll reach out within 1 business day to schedule your free home assessment
               </p>
             </form>
