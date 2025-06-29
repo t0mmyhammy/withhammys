@@ -24,6 +24,7 @@ import Image from "next/image"
 import NavBarMobile from "@/components/NavBar"
 import NavBarDesktop from "@/components/NavBarDesktop"
 import Form from "@/components/Form"
+import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion"
 
 export default function ForRealtorsPage() {
   return (
@@ -455,62 +456,66 @@ export default function ForRealtorsPage() {
         </div>
       </section>
 
-      {/* FAQ for Agents */}
+      {/* FAQ + Realtor Form Side-by-Side Section */}
       <section id="faq" className="py-20 bg-slate-50">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-16">
-              <h2
-                className="text-3xl md:text-4xl font-bold text-[#032b53] mb-4"
-              >
-                FAQ for Agents
-              </h2>
-              <p>
-                Common questions from real estate professionals
-              </p>
-            </div>
-
-            <div className="space-y-6">
-              {[
-                {
-                  question: "How do I refer someone?",
-                  answer:
-                    "Just share their name + contact info with us — or send them to your co-branded referral link. You'll never have to follow up — we handle it, and keep you updated.",
-                },
-                {
-                  question: "Can I brand this as part of my service?",
-                  answer:
-                    "Absolutely. We're here to make you look good, not compete. We can co-brand materials and keep your relationship front and center.",
-                },
-                {
-                  question: "How soon can Hammy's start?",
-                  answer:
-                    "We onboard most clients within 1 business day of closing. Perfect timing for when they're settling into their new home.",
-                },
-                {
-                  question: "What's the cost to my clients?",
-                  answer:
-                    "Our plans are custom to each home, but most homeowners invest $200-400/month for comprehensive care. We provide transparent pricing upfront.",
-                },
-                {
-                  question: "Do you offer any referral incentives?",
-                  answer:
-                    "Yes! We offer referral fees for successful client onboarding. Contact us to discuss our current partner program.",
-                },
-              ].map((faq, index) => (
-                <Card key={index} className="border-0 shadow-lg rounded-2xl overflow-hidden">
-                  <CardContent className="p-6">
-                    <h3
-                      className="text-lg font-bold text-[#032b53] mb-3"
-                    >
+          <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
+            {/* FAQ (left) */}
+            <div>
+              <div className="text-center md:text-left mb-16">
+                <h2 className="text-3xl md:text-4xl font-bold text-[#032b53] mb-4">FAQ for Agents</h2>
+                <p>Common questions from real estate professionals</p>
+              </div>
+              <Accordion type="single" collapsible className="w-full">
+                {[
+                  {
+                    question: "How do I refer someone?",
+                    answer:
+                      "Just share their name + contact info with us — or send them to your co-branded referral link. You'll never have to follow up — we handle it, and keep you updated.",
+                  },
+                  {
+                    question: "Can I brand this as part of my service?",
+                    answer:
+                      "Absolutely. We're here to make you look good, not compete. We can co-brand materials and keep your relationship front and center.",
+                  },
+                  {
+                    question: "How soon can Hammy's start?",
+                    answer:
+                      "We onboard most clients within 1 business day of closing. Perfect timing for when they're settling into their new home.",
+                  },
+                  {
+                    question: "What's the cost to my clients?",
+                    answer:
+                      "Our plans are custom to each home, but most homeowners invest $200-400/month for comprehensive care. We provide transparent pricing upfront.",
+                  },
+                  {
+                    question: "Do you offer any referral incentives?",
+                    answer:
+                      "Yes! We offer referral fees for successful client onboarding. Contact us to discuss our current partner program.",
+                  },
+                ].map((faq, index) => (
+                  <AccordionItem value={faq.question} key={index}>
+                    <AccordionTrigger className="text-lg font-bold text-[#032b53] mb-0">
                       {faq.question}
-                    </h3>
-                    <p className="text-gray-600 leading-relaxed">
+                    </AccordionTrigger>
+                    <AccordionContent className="text-gray-600 leading-relaxed">
                       {faq.answer}
-                    </p>
-                  </CardContent>
-                </Card>
-              ))}
+                    </AccordionContent>
+                  </AccordionItem>
+                ))}
+              </Accordion>
+            </div>
+            {/* Realtor Form (right) */}
+            <div>
+              <Form
+                heading="Refer a Client or Connect With Us"
+                subheading="Let us know about your client or how we can help you. We'll handle the rest."
+                confirmationHeading="Thank you for connecting!"
+                confirmationMessage="We've received your info and will reach out to you or your client soon."
+                buttonText="Send Referral or Inquiry"
+                helpPlaceholder="Tell us about your client, your business, or how we can help you..."
+                formType="realtor"
+              />
             </div>
           </div>
         </div>
@@ -617,21 +622,6 @@ export default function ForRealtorsPage() {
           </div>
         </div>
       </footer>
-
-      {/* Realtor Referral/Inquiry Form Section */}
-      <section className="py-20 bg-slate-50">
-        <div className="container mx-auto px-4 max-w-2xl">
-          <Form
-            heading="Refer a Client or Connect With Us"
-            subheading="Let us know about your client or how we can help you. We'll handle the rest."
-            confirmationHeading="Thank you for connecting!"
-            confirmationMessage="We've received your info and will reach out to you or your client soon."
-            buttonText="Send Referral or Inquiry"
-            helpPlaceholder="Tell us about your client, your business, or how we can help you..."
-            formType="realtor"
-          />
-        </div>
-      </section>
     </div>
   )
 }
