@@ -20,7 +20,23 @@ function formatPhoneNumber(value: string) {
   return `(${digits.slice(0, 3)}) ${digits.slice(3, 6)}-${digits.slice(6, 10)}`;
 }
 
-export default function Form() {
+export default function Form({
+  heading = "Want to Work With Us?",
+  subheading = "Tell us where you live and how to reach you. We'll take it from there.",
+  confirmationHeading = "We look forward to serving you",
+  confirmationMessage = "Thanks for reaching out. We'll be in touch with next steps shortly.",
+  buttonText = "Get My Home Going",
+  helpPlaceholder = "Tell us about your home and what you need help with...",
+  formType = "homeowner"
+}: {
+  heading?: string;
+  subheading?: string;
+  confirmationHeading?: string;
+  confirmationMessage?: string;
+  buttonText?: string;
+  helpPlaceholder?: string;
+  formType?: string;
+}) {
   const [form, setForm] = useState({
     firstName: "",
     lastName: "",
@@ -57,7 +73,7 @@ export default function Form() {
       const res = await fetch("/api/submit-form", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
+        body: JSON.stringify({ ...form, type: formType }),
       });
       const data = await res.json();
       if (res.ok && data.success) {
@@ -102,20 +118,20 @@ export default function Form() {
             className="text-xl font-bold flex items-center gap-2"
           >
             <Home className="w-5 h-5" />
-            Want to Work With Us?
+            {heading}
           </h3>
           <p className="text-sm opacity-90 mt-1">
-            Tell us where you live and how to reach you. We'll take it from there.
+            {subheading}
           </p>
         </div>
         <div className="p-6">
           {success ? (
             <div className="flex flex-col items-center justify-center min-h-[200px] text-center">
               <h2 className="text-2xl font-bold text-[#032b53] mb-2">
-                We look forward to serving you
+                {confirmationHeading}
               </h2>
               <p className="text-lg text-[#032b53] opacity-90">
-                Thanks for reaching out. We'll be in touch with next steps shortly.
+                {confirmationMessage}
               </p>
             </div>
           ) : (
@@ -209,10 +225,10 @@ export default function Form() {
               </div>
               <div>
                 <Label htmlFor="help" className="text-sm font-medium text-[#032b53]">How can we help?</Label>
-                <textarea id="help" rows={3} placeholder="Tell us about your home and what you need help with..." className="mt-1 w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-[#032b53] focus:border-[#032b53]" value={form.help} onChange={handleChange} required />
+                <textarea id="help" rows={3} placeholder={helpPlaceholder} className="mt-1 w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-[#032b53] focus:border-[#032b53]" value={form.help} onChange={handleChange} required />
               </div>
               <Button type="submit" className="w-full bg-[#fba0ab] hover:bg-[#fba0ab]/90 text-[#032b53] font-discount-bold py-3 rounded-lg" disabled={loading}>
-                {loading ? "Submitting..." : "Get My Home Going"}
+                {loading ? "Submitting..." : buttonText}
               </Button>
               {error && <p className="text-red-600 text-xs text-center">{error}</p>}
               <p className="text-xs text-gray-500 text-center">

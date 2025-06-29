@@ -5,6 +5,7 @@ import {
   Home,
   CheckCircle,
   Calendar,
+  CircleCheckBig,
   Shield,
   Star,
   Mail,
@@ -22,6 +23,7 @@ import Link from "next/link"
 import Image from "next/image"
 import NavBarMobile from "@/components/NavBar"
 import NavBarDesktop from "@/components/NavBarDesktop"
+import Form from "@/components/Form"
 
 export default function ForRealtorsPage() {
   return (
@@ -615,6 +617,21 @@ export default function ForRealtorsPage() {
           </div>
         </div>
       </footer>
+
+      {/* Realtor Referral/Inquiry Form Section */}
+      <section className="py-20 bg-slate-50">
+        <div className="container mx-auto px-4 max-w-2xl">
+          <Form
+            heading="Refer a Client or Connect With Us"
+            subheading="Let us know about your client or how we can help you. We'll handle the rest."
+            confirmationHeading="Thank you for connecting!"
+            confirmationMessage="We've received your info and will reach out to you or your client soon."
+            buttonText="Send Referral or Inquiry"
+            helpPlaceholder="Tell us about your client, your business, or how we can help you..."
+            formType="realtor"
+          />
+        </div>
+      </section>
     </div>
   )
 }
