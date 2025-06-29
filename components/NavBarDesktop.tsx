@@ -65,7 +65,7 @@ export default function NavBarDesktop() {
             FAQ
           </Link>
           <Button
-            className="bg-[#fba0ab] hover:bg-[#fba0ab]/90 text-[#032b53] font-semibold px-6 py-2 rounded-lg"
+            className="bg-[#fba0ab] hover:bg-[#fba0ab]/90 text-[#032b53] font-semibold px-6 py-2 rounded-lg font-discount-bold"
             onClick={scrollToForm}
           >
             Get Setup
