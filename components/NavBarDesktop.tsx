@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
@@ -20,21 +22,19 @@ export default function NavBarDesktop() {
   }, [pathname, router]);
 
   return (
-    <nav className="hidden md:flex bg-white border-b border-gray-100 py-4 sticky top-0 z-50 w-full">
+    <nav className="hidden md:flex bg-white border-b border-gray-100 py-6 sticky top-0 z-50 w-full">
       <div className="container mx-auto px-4 flex justify-between items-center">
         {/* Left Nav Items */}
         <div className="flex items-center space-x-8">
           <Link
             href="/"
-            className="text-[#032b53] hover:text-[#fba0ab] transition-colors font-medium"
-            style={{ fontFamily: "DM Sans, sans-serif" }}
+            className="text-[#032b53] hover:text-[#fba0ab] transition-colors font-medium font-discount-medium"
           >
             FOR HOMEOWNERS
           </Link>
           <Link
             href="/for-realtors"
-            className="text-[#032b53] hover:text-[#fba0ab] transition-colors font-medium"
-            style={{ fontFamily: "DM Sans, sans-serif" }}
+            className="text-[#032b53] hover:text-[#fba0ab] transition-colors font-medium font-discount-medium"
           >
             FOR REALTORS
           </Link>
@@ -44,8 +44,8 @@ export default function NavBarDesktop() {
           <Image
             src="/logos/hammys-primary-logo.svg"
             alt="Hammy's Logo"
-            width={200}
-            height={100}
+            width={300}
+            height={150}
             priority
             style={{ display: "inline-block" }}
           />
@@ -54,21 +54,18 @@ export default function NavBarDesktop() {
         <div className="flex items-center space-x-8">
           <Link
             href="/about"
-            className="text-[#032b53] hover:text-[#fba0ab] transition-colors font-medium"
-            style={{ fontFamily: "DM Sans, sans-serif" }}
+            className="text-[#032b53] hover:text-[#fba0ab] transition-colors font-medium font-discount-medium"
           >
             ABOUT US
           </Link>
           <Link
             href="/#faq"
-            className="text-[#032b53] hover:text-[#fba0ab] transition-colors font-medium"
-            style={{ fontFamily: "DM Sans, sans-serif" }}
+            className="text-[#032b53] hover:text-[#fba0ab] transition-colors font-medium font-discount-medium"
           >
             FAQ
           </Link>
           <Button
             className="bg-[#fba0ab] hover:bg-[#fba0ab]/90 text-[#032b53] font-semibold px-6 py-2 rounded-lg"
-            style={{ fontFamily: "DM Sans, sans-serif" }}
             onClick={scrollToForm}
           >
             Get Setup
