@@ -1,9 +1,54 @@
+@font-face {
+  font-family: 'Discount Black';
+  src: url('/fonts/Discount-Black.otf') format('opentype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Discount Heavy';
+  src: url('/fonts/Discount-Heavy.otf') format('opentype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Discount Bold Slant';
+  src: url('/fonts/Discount-BoldSlant.otf') format('opentype');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Discount Medium';
+  src: url('/fonts/Discount-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Discount Regular Slant';
+  src: url('/fonts/Discount-RegularSlant.otf') format('opentype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Discount Light';
+  src: url('/fonts/Discount-Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'DM Sans', Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 @layer utilities {
@@ -91,4 +136,40 @@ body {
   body {
     @apply bg-background text-foreground;
   }
+}
+
+h1 {
+  font-family: 'Discount Heavy', sans-serif;
+  font-weight: 900;
+  font-style: normal;
+}
+h2 {
+  font-family: 'Discount Bold Slant', sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+h3, .nav-menu {
+  font-family: 'Discount Medium', sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+h4, .quote, .pullout {
+  font-family: 'Discount Regular Slant', sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+h5, .meta, .caption {
+  font-family: 'Discount Light', sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+body, p, li, label, input, textarea, .body-text {
+  font-family: 'DM Sans', Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.font-discount-medium {
+  font-family: 'Discount Medium', sans-serif;
+  font-weight: 500;
 }
