@@ -221,7 +221,7 @@ export default function HammysLanding() {
               <div className="grid md:grid-cols-3 gap-8">
                 <Card className="border-0 shadow-lg rounded-2xl overflow-hidden">
                   <CardContent className="p-8">
-                    <div className="flex mb-4">
+                    <div className="flex justify-center mb-4">
                       {[...Array(5)].map((_, i) => (
                         <Star key={i} className="w-5 h-5 fill-[#fba0ab] text-[#fba0ab]" />
                       ))}
@@ -250,7 +250,7 @@ export default function HammysLanding() {
 
                 <Card className="border-0 shadow-lg rounded-2xl overflow-hidden">
                   <CardContent className="p-8">
-                    <div className="flex mb-4">
+                    <div className="flex justify-center mb-4">
                       {[...Array(5)].map((_, i) => (
                         <Star key={i} className="w-5 h-5 fill-[#fba0ab] text-[#fba0ab]" />
                       ))}
@@ -279,7 +279,7 @@ export default function HammysLanding() {
 
                 <Card className="border-0 shadow-lg rounded-2xl overflow-hidden">
                   <CardContent className="p-8">
-                    <div className="flex mb-4">
+                    <div className="flex justify-center mb-4">
                       {[...Array(5)].map((_, i) => (
                         <Star key={i} className="w-5 h-5 fill-[#fba0ab] text-[#fba0ab]" />
                       ))}
