@@ -466,10 +466,31 @@ Thank you,
 
             <div className="text-center mt-12">
               <Button
+                asChild
                 size="lg"
                 className="bg-[#fba0ab] hover:bg-[#fba0ab]/90 text-[#032b53] px-8 py-6 text-lg rounded-xl font-discount-bold"
               >
-                Invite Me to Your Office Meeting
+                <a
+                  href={`mailto:hello@withhammys.com?subject=${encodeURIComponent("Let's Set Up a Call")}&body=${encodeURIComponent(
+                    `Hi Hammy's Team,
+
+I'd like to set up a call to learn more about your Realtor program and how we can work together.
+
+My Name:
+My Brokerage:
+My Phone Number:
+My Email:
+
+Please let me know your availability!
+
+Thank you,
+`
+                  )}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Let's set up a call
+                </a>
               </Button>
             </div>
           </div>
@@ -482,7 +503,7 @@ Thank you,
           <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
             {/* FAQ (left) */}
             <div>
-              <div className="text-center md:text-left mb-16">
+              <div className="text-center md:text-left mb-6">
                 <h2 className="text-3xl md:text-4xl font-bold text-[#032b53] mb-4">FAQ for Agents</h2>
                 <p>Common questions from real estate professionals</p>
               </div>
