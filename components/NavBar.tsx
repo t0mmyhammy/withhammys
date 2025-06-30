@@ -58,7 +58,7 @@ export default function NavBarMobile() {
 
   return (
     <>
-      <nav className="sticky top-0 z-50 bg-white border-b border-[#032b53]" style={{ borderBottomWidth: '0.25px' }}>
+      <nav className="fixed top-0 left-0 w-full z-50 bg-white border-b border-[#032b53] py-6" style={{ borderBottomWidth: '0.25px' }}>
         <div className="container mx-auto px-4 flex items-center justify-between">
           {/* Logo Left */}
           <Link href="/" className="flex items-center" tabIndex={menuOpen ? -1 : 0}>

@@ -37,7 +37,7 @@ export default function HammysLanding() {
       <div className="hidden md:block">
         <NavBarDesktop />
       </div>
-      <div className="min-h-screen bg-white">
+      <div className="min-h-screen bg-white pt-24">
         {/* Hero Section */}
         <section className="relative overflow-hidden bg-gradient-to-b from-slate-50 to-white">
           <div className="container mx-auto px-4 py-16 md:py-24 lg:py-32">

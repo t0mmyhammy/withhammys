@@ -22,7 +22,7 @@ export default function NavBarDesktop() {
   }, [pathname, router]);
 
   return (
-    <nav className="hidden md:flex bg-white sticky top-0 z-50 w-full border-b border-[#032b53]" style={{ borderBottomWidth: '0.25px' }}>
+    <nav className="hidden md:flex bg-white fixed top-0 left-0 w-full z-50 border-b border-[#032b53] py-6" style={{ borderBottomWidth: '0.25px' }}>
       <div className="container mx-auto px-4 flex justify-between items-center">
         {/* Left Nav Items */}
         <div className="flex items-center space-x-8">
