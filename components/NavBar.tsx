@@ -58,27 +58,26 @@ export default function NavBarMobile() {
 
   return (
     <>
-      <nav className="sticky top-0 z-50 bg-white border-b border-gray-100 py-4 w-full md:hidden">
+      <nav className="sticky top-0 z-50 bg-white border-b border-[#032b53]" style={{ borderBottomWidth: '0.25px' }}>
         <div className="container mx-auto px-4 flex items-center justify-between">
           {/* Logo Left */}
           <Link href="/" className="flex items-center" tabIndex={menuOpen ? -1 : 0}>
             <Image
               src="/logos/hammys-primary-logo.svg"
               alt="Hammy's Logo"
-              width={120}
-              height={60}
+              width={180}
+              height={90}
               priority
-              style={{ height: "40px", width: "auto" }}
+              style={{ height: "60px", width: "auto" }}
             />
           </Link>
-          {/* Menu Right */}
+          {/* Hamburger Right */}
           <button
-            className="flex items-center gap-2 text-[#032b53] font-bold text-lg md:text-xl focus:outline-none"
+            className="flex items-center text-[#032b53] focus:outline-none"
             aria-label={menuOpen ? "Close menu" : "Open menu"}
             onClick={() => setMenuOpen((v) => !v)}
             tabIndex={0}
           >
-            MENU
             {menuOpen ? <CloseIcon className="w-7 h-7" /> : <MenuIcon className="w-7 h-7" />}
           </button>
         </div>
@@ -92,16 +91,16 @@ export default function NavBarMobile() {
           role="dialog"
         >
           {/* Top nav bar in overlay */}
-          <nav className="border-b border-gray-100 py-4 w-full sticky top-0 bg-white z-10">
+          <nav className="border-b border-gray-100 py-6 w-full sticky top-0 bg-white z-10">
             <div className="container mx-auto px-4 flex items-center justify-between">
               <Link href="/" className="flex items-center" tabIndex={0} onClick={() => setMenuOpen(false)}>
                 <Image
                   src="/logos/hammys-primary-logo.svg"
                   alt="Hammy's Logo"
-                  width={120}
-                  height={60}
+                  width={180}
+                  height={90}
                   priority
-                  style={{ height: "40px", width: "auto" }}
+                  style={{ height: "60px", width: "auto" }}
                 />
               </Link>
               <button
@@ -122,7 +121,6 @@ export default function NavBarMobile() {
                 key={link.href}
                 href={link.href}
                 className="text-2xl md:text-3xl font-bold text-[#032b53] hover:text-[#fba0ab] transition-colors"
-                style={{ fontFamily: "Gotham Bold, sans-serif" }}
                 tabIndex={0}
                 onClick={() => setMenuOpen(false)}
               >
@@ -133,7 +131,6 @@ export default function NavBarMobile() {
               tabIndex={0}
               onClick={scrollToForm}
               className="mt-8 px-8 py-4 rounded-lg bg-[#fba0ab] text-[#032b53] font-bold text-xl shadow-lg hover:bg-[#fba0ab]/90 transition-colors"
-              style={{ fontFamily: "DM Sans, sans-serif" }}
             >
               GET SETUP
             </button>
