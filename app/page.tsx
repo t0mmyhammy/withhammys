@@ -5,7 +5,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-import { Home, CheckCircle, Calendar, Shield, Star, Mail, Instagram, Facebook, MapPin, ChevronDown } from "lucide-react"
+import { Home, CheckCircle, Calendar, CircleCheckBig, Shield, Star, Mail, Instagram, Facebook, MapPin, ChevronDown } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
 import NavBarMobile from "@/components/NavBar"
@@ -128,7 +128,7 @@ export default function HammysLanding() {
               <Card className="border-0 shadow-lg rounded-2xl overflow-hidden hover:shadow-xl transition-shadow duration-300">
                 <CardContent className="p-8 text-center">
                   <div className="w-16 h-16 bg-[#fba0ab]/10 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <Shield className="w-8 h-8 text-[#032b53]" />
+                    <CircleCheckBig className="w-8 h-8 text-[#032b53]" />
                   </div>
                   <h3
                     className="text-xl font-bold text-[#032b53] mb-4"
@@ -420,19 +420,15 @@ export default function HammysLanding() {
                       "No, we're happy to help you get your home running smoothly. We recommend starting with a formal inspection to get a baseline of your home's condition if its been more than 3 years. This can be discussed during your home visit.",
                   },
                 ].map((faq, index) => (
-                  <details key={index} className="group">
-                    <summary className="flex justify-between items-center cursor-pointer p-6 bg-white border border-gray-200 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300">
-                      <h3
-                        className="text-lg font-bold text-[#032b53]"
-                      >
+                  <details key={index} className="group rounded-2xl border shadow-lg mb-4 overflow-hidden">
+                    <summary className="flex justify-between items-center cursor-pointer p-6 bg-white">
+                      <h3 className="text-lg font-discount-medium text-[#032b53]">
                         {faq.question}
                       </h3>
                       <ChevronDown className="w-5 h-5 text-[#032b53] group-open:rotate-180 transition-transform duration-200" />
                     </summary>
-                    <div className="p-6 pt-0">
-                      <p className="text-gray-600 leading-relaxed">
-                        {faq.answer}
-                      </p>
+                    <div className="px-6 pb-6 text-gray-600 leading-relaxed">
+                      <p>{faq.answer}</p>
                     </div>
                   </details>
                 ))}

@@ -535,11 +535,17 @@ Thank you,
                       "Yes! We offer referral fees for successful client onboarding. Contact us to discuss our current partner program.",
                   },
                 ].map((faq, index) => (
-                  <AccordionItem value={faq.question} key={index}>
-                    <AccordionTrigger className="text-lg font-bold text-[#032b53] mb-0">
-                      {faq.question}
+                  <AccordionItem
+                    value={faq.question}
+                    key={index}
+                    className="rounded-2xl border shadow-lg mb-4 overflow-hidden"
+                  >
+                    <AccordionTrigger className="p-6">
+                      <h3 className="text-lg font-discount-medium text-[#032b53]">
+                        {faq.question}
+                      </h3>
                     </AccordionTrigger>
-                    <AccordionContent className="text-gray-600 leading-relaxed">
+                    <AccordionContent className="px-6 pb-6 text-gray-600 leading-relaxed">
                       {faq.answer}
                     </AccordionContent>
                   </AccordionItem>
