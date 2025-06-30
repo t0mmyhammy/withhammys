@@ -390,10 +390,29 @@ export default function ForRealtorsPage() {
                     Quick overview to share with clients
                   </p>
                   <Button
+                    asChild
                     variant="outline"
                     className="border-[#032b53] text-[#032b53] hover:bg-[#032b53] hover:text-white bg-transparent font-discount-bold"
                   >
-                    Download PDF
+                    <a
+                      href={`mailto:hello@withhammys.com?subject=${encodeURIComponent("Request Access to Marketing Materials")}&body=${encodeURIComponent(
+                        `Hi Hammy's Team,
+
+I'd like to request access to your marketing materials and resources for realtors.
+
+My Name:
+My Brokerage:
+My Phone Number:
+My Email:
+
+Thank you,
+`
+                      )}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Request Access
+                    </a>
                   </Button>
                 </CardContent>
               </Card>
@@ -417,17 +436,15 @@ export default function ForRealtorsPage() {
                     className="border-[#032b53] text-[#032b53] hover:bg-[#032b53] hover:text-white bg-transparent font-discount-bold"
                   >
                     <a
-                      href={`mailto:hello@withhammys.com?subject=${encodeURIComponent("Hammy's Realtor Interest")}&body=${encodeURIComponent(
+                      href={`mailto:hello@withhammys.com?subject=${encodeURIComponent("Request Access to Marketing Materials")}&body=${encodeURIComponent(
                         `Hi Hammy's Team,
 
-I'm interested in getting access to the co-branded referral page and learning more about your Realtor program.
+I'd like to request access to your marketing materials and resources for realtors.
 
 My Name:
 My Brokerage:
 My Phone Number:
 My Email:
-
-Please let me know the next steps!
 
 Thank you,
 `
@@ -455,10 +472,29 @@ Thank you,
                     Present Hammy's to your team
                   </p>
                   <Button
+                    asChild
                     variant="outline"
                     className="border-[#032b53] text-[#032b53] hover:bg-[#032b53] hover:text-white bg-transparent font-discount-bold"
                   >
-                    View Slides
+                    <a
+                      href={`mailto:hello@withhammys.com?subject=${encodeURIComponent("Request Access to Marketing Materials")}&body=${encodeURIComponent(
+                        `Hi Hammy's Team,
+
+I'd like to request access to your marketing materials and resources for realtors.
+
+My Name:
+My Brokerage:
+My Phone Number:
+My Email:
+
+Thank you,
+`
+                      )}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Request Access
+                    </a>
                   </Button>
                 </CardContent>
               </Card>

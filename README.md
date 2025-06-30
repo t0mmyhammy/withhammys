@@ -249,4 +249,11 @@ This is a client project for Hammy's Home Experts. For updates or modifications,
 
 Proprietary - All rights reserved by Hammy's Home Experts
 
+## 🛠️ Future Improvements
+
+- **Realtor Welcome Kit Button:**
+  - Currently commented out. In the future, this could trigger a download, open a modal, or link to a gated resource for verified agents.
+- **Marketing Materials Access:**
+  - Currently, 'Request Access' opens a mailto link. In the future, consider automating access with a secure download link, authentication, or CRM integration.
+
 ---
