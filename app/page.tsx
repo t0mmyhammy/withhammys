@@ -5,7 +5,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-import { Home, CheckCircle, Calendar, CircleCheckBig, Shield, Star, Mail, MapPinHouse,Instagram, Facebook, MapPin, ChevronDown } from "lucide-react"
+import { Home, CheckCircle, Calendar, CircleCheckBig, HousePlus, Shield, Star, Mail, MapPinHouse, MapPinned, NotebookPen, PhoneForwarded, Instagram, Facebook, MapPin, ChevronDown } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
 import NavBarMobile from "@/components/NavBar"
@@ -162,7 +162,7 @@ export default function HammysLanding() {
               <div className="grid md:grid-cols-3 gap-8">
                 <div className="text-center">
                   <div className="w-12 h-12 bg-[#fba0ab]/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <CheckCircle className="w-6 h-6 text-[#032b53]" />
+                    <HousePlus className="w-6 h-6 text-[#032b53]" />
                   </div>
                   <h3 className="text-lg font-bold text-[#032b53] mb-2">
                     No Surprises
@@ -175,7 +175,7 @@ export default function HammysLanding() {
 
                 <div className="text-center">
                   <div className="w-12 h-12 bg-[#fba0ab]/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Calendar className="w-6 h-6 text-[#032b53]" />
+                    <NotebookPen className="w-6 h-6 text-[#032b53]" />
                   </div>
                   <h3 className="text-lg font-bold text-[#032b53] mb-2">
                     Stay Ahead
@@ -188,7 +188,7 @@ export default function HammysLanding() {
 
                 <div className="text-center">
                   <div className="w-12 h-12 bg-[#fba0ab]/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Shield className="w-6 h-6 text-[#032b53]" />
+                    <PhoneForwarded className="w-6 h-6 text-[#032b53]" />
                   </div>
                   <h3 className="text-lg font-bold text-[#032b53] mb-2">
                     One Call Does It All
@@ -338,7 +338,7 @@ export default function HammysLanding() {
                       <h3
                         className="text-xl font-bold flex items-center gap-2"
                       >
-                        <MapPin className="w-5 h-5" />
+                        <MapPinned className="w-5 h-5" />
                         Active Service Areas
                       </h3>
                     </div>
