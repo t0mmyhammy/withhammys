@@ -5,7 +5,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-import { Home, CheckCircle, Calendar, CircleCheckBig, Shield, Star, Mail, Instagram, Facebook, MapPin, ChevronDown } from "lucide-react"
+import { Home, CheckCircle, Calendar, CircleCheckBig, Shield, Star, Mail, MapPinHouse,Instagram, Facebook, MapPin, ChevronDown } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
 import NavBarMobile from "@/components/NavBar"
@@ -355,7 +355,7 @@ export default function HammysLanding() {
                           "More Coming Soon!",
                         ].map((city, index) => (
                           <div key={index} className="flex items-center gap-2">
-                            <CheckCircle className="w-4 h-4 text-[#032b53]" />
+                            <MapPinHouse className="w-4 h-4 text-[#032b53]" />
                             <span className="text-gray-700">
                               {city}
                             </span>
