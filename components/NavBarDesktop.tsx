@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { useRouter, usePathname } from "next/navigation";
-import { useCallback } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 export default function NavBarDesktop() {
   const router = useRouter();
@@ -21,6 +21,23 @@ export default function NavBarDesktop() {
     }
   }, [pathname, router]);
 
+  // Track hash on client to avoid hydration mismatch
+  const [hash, setHash] = useState("");
+  useEffect(() => {
+    const updateHash = () => setHash(window.location.hash);
+    updateHash();
+    window.addEventListener("hashchange", updateHash);
+    return () => window.removeEventListener("hashchange", updateHash);
+  }, []);
+
+  // Helper to determine if a link is active
+  const isActive = (href: string) => {
+    if (href === "/#faq") {
+      return (pathname === "/" || pathname === "/for-realtors") && hash === "#faq";
+    }
+    return pathname === href;
+  };
+
   return (
     <nav className="hidden md:flex bg-white fixed top-0 left-0 w-full z-50 border-b border-[#032b53] py-6" style={{ borderBottomWidth: '0.25px' }}>
       <div className="container mx-auto px-4 flex justify-between items-center">
@@ -28,13 +45,13 @@ export default function NavBarDesktop() {
         <div className="flex items-center space-x-8">
           <Link
             href="/"
-            className="text-[#032b53] hover:text-[#fba0ab] transition-colors font-medium font-discount-medium"
+            className={`text-[#032b53] hover:text-[#fba0ab] transition-colors font-medium font-discount-medium ${isActive("/") ? "border-b-4 border-[#fba0ab] font-bold" : ""}`}
           >
             FOR HOMEOWNERS
           </Link>
           <Link
             href="/for-realtors"
-            className="text-[#032b53] hover:text-[#fba0ab] transition-colors font-medium font-discount-medium"
+            className={`text-[#032b53] hover:text-[#fba0ab] transition-colors font-medium font-discount-medium ${isActive("/for-realtors") ? "border-b-4 border-[#fba0ab] font-bold" : ""}`}
           >
             FOR REALTORS
           </Link>
@@ -54,13 +71,13 @@ export default function NavBarDesktop() {
         <div className="flex items-center space-x-8">
           <Link
             href="/about"
-            className="text-[#032b53] hover:text-[#fba0ab] transition-colors font-medium font-discount-medium"
+            className={`text-[#032b53] hover:text-[#fba0ab] transition-colors font-medium font-discount-medium ${isActive("/about") ? "border-b-4 border-[#fba0ab] font-bold" : ""}`}
           >
             ABOUT US
           </Link>
           <Link
             href="/#faq"
-            className="text-[#032b53] hover:text-[#fba0ab] transition-colors font-medium font-discount-medium"
+            className={`text-[#032b53] hover:text-[#fba0ab] transition-colors font-medium font-discount-medium ${isActive("/#faq") ? "border-b-4 border-[#fba0ab] font-bold" : ""}`}
           >
             FAQ
           </Link>

@@ -21,19 +21,17 @@ export default function AboutPage() {
           <div className="max-w-4xl mx-auto">
             <h1
               className="text-4xl md:text-5xl font-bold text-[#032b53] mb-8 text-center"
-              style={{ fontFamily: "Gotham Bold, sans-serif" }}
             >
               About Hammy's
             </h1>
 
             <h2
               className="text-2xl md:text-3xl font-bold text-[#032b53] mb-12 text-center"
-              style={{ fontFamily: "Gotham Bold, sans-serif" }}
             >
               Family-run. Community-rooted. Professionally obsessed.
             </h2>
 
-            <div className="prose prose-lg max-w-none" style={{ fontFamily: "DM Sans, sans-serif" }}>
+            <div className="prose prose-lg max-w-none">
               <p className="text-xl text-gray-700 leading-relaxed mb-8">
                 Hammy's was founded by siblings-in-law David, Maureen, and Tom — three people with different strengths
                 but one shared mission: to bring dependable, high-quality home care back to the neighborhoods they love.
@@ -78,7 +76,6 @@ export default function AboutPage() {
                 <Button
                   size="lg"
                   className="bg-[#032b53] hover:bg-[#032b53]/90 text-white px-8 py-6 text-lg rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
-                  style={{ fontFamily: "DM Sans, sans-serif" }}
                 >
                   Get My Home Plan
                 </Button>
@@ -96,11 +93,10 @@ export default function AboutPage() {
               <div className="mb-6 md:mb-0">
                 <h3
                   className="text-2xl font-bold text-[#032b53] mb-2"
-                  style={{ fontFamily: "Gotham Bold, sans-serif" }}
                 >
                   Hammy's
                 </h3>
-                <p className="text-gray-600" style={{ fontFamily: "DM Sans, sans-serif" }}>
+                <p className="text-gray-600">
                   We sweat the small stuff so you can bring home the bacon.
                 </p>
               </div>
@@ -110,28 +106,24 @@ export default function AboutPage() {
                   <Link
                     href="/about"
                     className="text-gray-600 hover:text-[#032b53] transition-colors"
-                    style={{ fontFamily: "DM Sans, sans-serif" }}
                   >
                     About
                   </Link>
                   <Link
                     href="/#faq"
                     className="text-gray-600 hover:text-[#032b53] transition-colors"
-                    style={{ fontFamily: "DM Sans, sans-serif" }}
                   >
                     FAQs
                   </Link>
                   <Link
                     href="/privacy"
                     className="text-gray-600 hover:text-[#032b53] transition-colors"
-                    style={{ fontFamily: "DM Sans, sans-serif" }}
                   >
                     Privacy
                   </Link>
                   <Link
                     href="/contact"
                     className="text-gray-600 hover:text-[#032b53] transition-colors"
-                    style={{ fontFamily: "DM Sans, sans-serif" }}
                   >
                     Contact
                   </Link>
@@ -156,7 +148,6 @@ export default function AboutPage() {
 
             <div
               className="border-t border-gray-200 mt-8 pt-8 text-center text-sm text-gray-500"
-              style={{ fontFamily: "DM Sans, sans-serif" }}
             >
               <p>&copy; {new Date().getFullYear()} Hammy's Home Experts. All rights reserved.</p>
             </div>
@@ -165,4 +156,10 @@ export default function AboutPage() {
       </footer>
     </div>
   )
+}
+
+export const metadata = {
+  title: "About Us",
+  description: "Learn more about Hammy's Home Experts and our mission.",
+  generator: 'v0.dev'
 }

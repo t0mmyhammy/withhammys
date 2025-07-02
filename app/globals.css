@@ -178,3 +178,8 @@ body, p, li, label, input, textarea, .body-text {
   font-family: 'Discount Bold', sans-serif;
   font-weight: 700;
 }
+
+.font-discount-black {
+  font-family: 'Discount Black', sans-serif;
+  font-weight: 900;
+}

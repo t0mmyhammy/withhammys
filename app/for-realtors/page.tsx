@@ -25,6 +25,7 @@ import NavBarMobile from "@/components/NavBar"
 import NavBarDesktop from "@/components/NavBarDesktop"
 import Form from "@/components/Form"
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion"
+import TestimonialsCarousel from "@/components/TestimonialsCarousel"
 
 export default function ForRealtorsPage() {
   return (
@@ -50,7 +51,7 @@ export default function ForRealtorsPage() {
             <h1
               className="text-4xl md:text-6xl lg:text-7xl font-bold text-[#032b53] mb-6 leading-tight"
             >
-              Make your buyers feel at home — faster.
+              Make buyers feel at home, faster.
             </h1>
 
             <p
@@ -61,26 +62,39 @@ export default function ForRealtorsPage() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button
-                size="lg"
-                className="bg-[#032b53] hover:bg-[#032b53]/90 text-white px-8 py-6 text-lg rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 font-discount-bold"
+              <a href="#realtor-form" className="block">
+                <Button
+                  size="lg"
+                  className="bg-[#032b53] hover:bg-[#032b53]/90 text-white px-8 py-6 text-lg rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 font-discount-bold w-full"
+                >
+                  Refer a Client
+                </Button>
+              </a>
+              <a
+                href="mailto:hello@withhammys.com?subject=Interest%20in%20Realtor%20Partnership&body=Hi%20Hammy's%20Team%2C%0A%0AI'd%20like%20to%20schedule%20a%2010-minute%20intro%20call%20to%20learn%20more%20about%20your%20Realtor%20Partnership%20program.%0A%0AMy%20Name%3A%0AMy%20Brokerage%3A%0AMy%20Phone%20Number%3A%0AMy%20Email%3A%0A%0APlease%20let%20me%20know%20your%20availability!%0A%0AThank%20you%2C"
+                className="block"
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                Refer a Client
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-[#032b53] text-[#032b53] hover:bg-[#032b53] hover:text-white px-8 py-6 text-lg rounded-xl bg-transparent font-discount-bold"
-              >
-                Book a 10-min Realtor Call
-              </Button>
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-[#032b53] text-[#032b53] hover:bg-[#032b53] hover:text-white px-8 py-6 text-lg rounded-xl bg-transparent font-discount-bold w-full"
+                >
+                  Book a 10-min Realtor Call
+                </Button>
+              </a>
             </div>
           </div>
         </div>
       </section>
 
+      {/* Brand Divider Lines */}
+      <div className="w-full h-2 bg-[#032b53] mt-8" style={{margin: 0, padding: 0}}></div>
+      <div className="w-full h-2 bg-[#fba0ab]" style={{margin: 0, padding: 0}}></div>
+
       {/* Why Realtors Partner With Hammy's */}
-      <section className="py-20 bg-white">
+      <section className="py-12 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
@@ -148,7 +162,7 @@ export default function ForRealtorsPage() {
       </section>
 
       {/* What We Offer Buyers */}
-      <section className="py-20 bg-slate-50">
+      <section className="py-12 bg-slate-50">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
@@ -190,7 +204,7 @@ export default function ForRealtorsPage() {
       </section>
 
       {/* How It Works */}
-      <section className="py-20 bg-white">
+      <section className="py-12 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
@@ -288,80 +302,34 @@ export default function ForRealtorsPage() {
       </section>
 
       {/* What Agents Are Saying */}
-      <section className="py-20 bg-slate-50">
+      <section className="py-12" style={{ background: '#fef5f6' }}>
         <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16">
-              <h2
-                className="text-3xl md:text-4xl font-bold text-[#032b53] mb-4"
-              >
-                What Agents Are Saying
-              </h2>
-            </div>
-
-            <div className="grid md:grid-cols-2 gap-8">
-              <Card className="border-0 shadow-lg rounded-2xl overflow-hidden">
-                <CardContent className="p-8">
-                  <div className="flex mb-4">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-5 h-5 fill-[#fba0ab] text-[#fba0ab]" />
-                    ))}
-                  </div>
-                  <p
-                    className="text-gray-700 mb-6 text-lg leading-relaxed"
-                  >
-                    "Hammy's gave me something no other partner does — a way to show value after the closing table."
-                  </p>
-                  <div className="flex items-center">
-                    <div className="w-12 h-12 bg-[#032b53] rounded-full flex items-center justify-center text-white font-bold mr-4">
-                      D
-                    </div>
-                    <div>
-                      <p className="font-semibold text-[#032b53]">
-                        Dan G.
-                      </p>
-                      <p className="text-gray-500 text-sm">
-                        DOBI Realty
-                      </p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card className="border-0 shadow-lg rounded-2xl overflow-hidden">
-                <CardContent className="p-8">
-                  <div className="flex mb-4">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-5 h-5 fill-[#fba0ab] text-[#fba0ab]" />
-                    ))}
-                  </div>
-                  <p
-                    className="text-gray-700 mb-6 text-lg leading-relaxed"
-                  >
-                    "My clients trust me, and I trust Hammy's. It's one of the easiest handoffs I've ever made."
-                  </p>
-                  <div className="flex items-center">
-                    <div className="w-12 h-12 bg-[#032b53] rounded-full flex items-center justify-center text-white font-bold mr-4">
-                      N
-                    </div>
-                    <div>
-                      <p className="font-semibold text-[#032b53]">
-                        Natalie V.
-                      </p>
-                      <p className="text-gray-500 text-sm">
-                        KW Domain
-                      </p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
+          <div className="max-w-3xl mx-auto mb-8 text-center">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#032b53] mb-2">What Agents Are Saying</h2>
+            <p className="text-xl text-gray-600">Don't just take our word for it – hear from the real estate pros who trust Hammy's</p>
           </div>
+          <TestimonialsCarousel
+            testimonials={[
+              {
+                name: "Dan G.",
+                brokerage: "DOBI Real Estate",
+                text: "Hammy's gave me something no other partner does — a way to show value after the closing table.",
+                rating: 5,
+              },
+              {
+                name: "Natalie V.",
+                brokerage: "KW Domain",
+                text: "My clients trust me, and I trust Hammy's. It's one of the easiest handoffs I've ever made.",
+                rating: 5,
+              },
+            ]}
+            autoRotateInterval={5000}
+          />
         </div>
       </section>
 
       {/* Marketing Materials */}
-      <section className="py-20 bg-white">
+      <section className="py-12 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
@@ -534,7 +502,7 @@ Thank you,
       </section>
 
       {/* FAQ + Realtor Form Side-by-Side Section */}
-      <section id="faq" className="py-20 bg-slate-50">
+      <section id="faq" className="py-12 bg-slate-50">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
             {/* FAQ (left) */}
@@ -589,7 +557,7 @@ Thank you,
               </Accordion>
             </div>
             {/* Realtor Form (right) */}
-            <div>
+            <div id="realtor-form">
               <Form
                 heading="Refer a Client or Connect With Us"
                 subheading="Let us know about your client or how we can help you. We'll handle the rest."
@@ -707,4 +675,10 @@ Thank you,
       </footer>
     </div>
   )
+}
+
+export const metadata = {
+  title: "For Realtors | Wow Your Clients",
+  description: "Hammy's for real estate professionals: wow your clients with concierge home setup and care.",
+  generator: 'v0.dev'
 }

@@ -32,7 +32,6 @@ export default function RootLayout({
         <link rel="apple-touch-icon" href="/favicon/apple-touch-icon.png" />
         <link rel="manifest" href="/favicon/site.webmanifest" />
         <link rel="preload" href="/logos/hammys-primary-logo.svg" as="image" />
-        <link rel="preload" href="/logos/hammys-stacked.svg" as="image" />
         <Script
           src={`https://maps.googleapis.com/maps/api/js?key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}&libraries=places`}
           strategy="beforeInteractive"
@@ -40,11 +39,6 @@ export default function RootLayout({
       </head>
       <body className={inter.className} style={{ fontFamily: "DM Sans, sans-serif" }}>
         {children}
-        <script
-          src={`https://maps.googleapis.com/maps/api/js?key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}&libraries=places`}
-          async
-          defer
-        />
       </body>
     </html>
   )

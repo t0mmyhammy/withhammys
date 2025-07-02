@@ -190,7 +190,7 @@ export default function Form({
                       getSuggestionItemProps: (suggestion: Suggestion, options?: any) => any;
                       loading: boolean;
                     }) => (
-                      <div>
+                      <div className="relative">
                         <Input
                           {...getInputProps({
                             id: "address",
