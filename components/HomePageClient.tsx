@@ -124,6 +124,11 @@ export default function HomePageClient() {
             <TestimonialsCarousel
               testimonials={[
                 {
+                  name: "Kelley and George",
+                  text: "As new homeowners, we were overwhelmed with all the new responsibilities that came with our purchase. Our home walkthrough and maintenance plan that we purchased through Hammy's changed everything. Not only do we have more confidence in what is going on, we have someone we can call whenever we need.",
+                  rating: 5,
+                },
+                {
                   name: "Mark V.",
                   text: "I didn't lift a finger, and somehow everything got done. Hammy's took care of the filters, cleared the gutters, and even checked in after it rained to make sure nothing got backed up. It honestly felt like having a home manager who actually keeps track of your house better than you do—and genuinely cares that it runs well.",
                   rating: 5,
