@@ -32,45 +32,7 @@ export default function AboutPage() {
             </h2>
 
             <div className="prose prose-lg max-w-none">
-              <p className="text-xl text-gray-700 leading-relaxed mb-8">
-                Hammy's was founded by three locals with different strengths but one shared mission: to bring dependable, high-quality home care back to the neighborhoods they love.
-              </p>
-
-              <p className="text-lg text-gray-700 leading-relaxed mb-6">
-                <strong className="text-[#032b53]">David</strong> has spent decades leading teams and executives in
-                delivering strategic, high-quality service — the kind that builds trust and runs like clockwork.
-              </p>
-
-              <p className="text-lg text-gray-700 leading-relaxed mb-6">
-                <strong className="text-[#032b53]">Maureen</strong> brings a thoughtful, human approach with a sharp eye
-                for detail. After managing multiple remodels and new builds, she knows what good looks like — and how to
-                get there.
-              </p>
-
-              <p className="text-lg text-gray-700 leading-relaxed mb-8">
-                <strong className="text-[#032b53]">Tom</strong> is a product leader, technologist, and former HOA
-                secretary to a Chicago walk-up… before an infamous roof leak taught him more than any job ever could.
-              </p>
-
-              <p className="text-lg text-gray-700 leading-relaxed mb-8">
-                Together, they're building Hammy's to take the hassle out of homeownership — and replace it with
-                proactive care, dependable support, and real relationships.
-              </p>
-
-              <blockquote className="border-l-4 border-[#fba0ab] pl-6 my-12">
-                <p className="text-xl text-[#032b53] font-semibold italic leading-relaxed">
-                  "We're family first, business partners second. And Hammy's is how we take care of the neighborhoods we
-                  call home."
-                </p>
-              </blockquote>
-
-              <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-12">
-                Hammy's was founded by three locals with different strengths but one shared mission: to bring dependable, high-quality home care back to the neighborhoods they love.
-                <br /><br />
-                Together, they're building Hammy's to take the hassle out of homeownership — and replace it with proactive care, dependable support, and real relationships.
-                <br /><br />
-                Because your home deserves more than a rotating cast of contractors. It deserves a team who shows up — and sticks around.
-              </p>
+              {/* All founder bios, mission statement, and quoted content removed as requested. */}
             </div>
 
             <div className="text-center mt-12">
