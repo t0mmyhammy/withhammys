@@ -311,15 +311,14 @@ export default function ForRealtorsPage() {
           <TestimonialsCarousel
             testimonials={[
               {
-                name: "Dan G.",
+                name: "Natalie V.",
                 brokerage: "DOBI Real Estate",
-                text: "Hammy's gave me something no other partner does — a way to show value after the closing table.",
+                text: "My clients trust me, and I trust Hammy's. It's one of the easiest handoffs I've ever made.",
                 rating: 5,
               },
               {
-                name: "Natalie V.",
-                brokerage: "KW Domain",
-                text: "My clients trust me, and I trust Hammy's. It's one of the easiest handoffs I've ever made.",
+                name: "Danny P.",
+                text: "Hammy's gave me something no other partner does — a way to show value after the closing table.",
                 rating: 5,
               },
             ]}
