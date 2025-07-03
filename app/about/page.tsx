@@ -33,8 +33,7 @@ export default function AboutPage() {
 
             <div className="prose prose-lg max-w-none">
               <p className="text-xl text-gray-700 leading-relaxed mb-8">
-                Hammy's was founded by siblings-in-law David, Maureen, and Tom — three people with different strengths
-                but one shared mission: to bring dependable, high-quality home care back to the neighborhoods they love.
+                Hammy's was founded by three locals with different strengths but one shared mission: to bring dependable, high-quality home care back to the neighborhoods they love.
               </p>
 
               <p className="text-lg text-gray-700 leading-relaxed mb-6">
@@ -65,9 +64,12 @@ export default function AboutPage() {
                 </p>
               </blockquote>
 
-              <p className="text-xl text-gray-700 leading-relaxed font-semibold text-center">
-                Because your home deserves more than a rotating cast of contractors. It deserves a team who shows up —
-                and sticks around.
+              <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-12">
+                Hammy's was founded by three locals with different strengths but one shared mission: to bring dependable, high-quality home care back to the neighborhoods they love.
+                <br /><br />
+                Together, they're building Hammy's to take the hassle out of homeownership — and replace it with proactive care, dependable support, and real relationships.
+                <br /><br />
+                Because your home deserves more than a rotating cast of contractors. It deserves a team who shows up — and sticks around.
               </p>
             </div>
 
@@ -97,7 +99,7 @@ export default function AboutPage() {
                   Hammy's
                 </h3>
                 <p className="text-gray-600">
-                  We sweat the small stuff so you can bring home the bacon.
+                  We handle the house. You make it home.
                 </p>
               </div>
 
