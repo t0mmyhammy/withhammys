@@ -123,9 +123,16 @@ export default function RootLayout({
         {/* <link href="https://fonts.cdnfonts.com/css/gotham" rel="stylesheet" /> */}
         <script dangerouslySetInnerHTML={{__html: `
           (function() {
+            var ua = navigator.userAgent;
+            var isSupported =
+              /Chrome\//.test(ua) ||
+              /Firefox\//.test(ua) ||
+              /Edg\//.test(ua) ||
+              /Safari\//.test(ua) ||
+              /DuckDuckGo\//.test(ua);
             var isOldIE = /*@cc_on!@*/false || !!document.documentMode;
-            var isOldEdge = /Edge\/[0-9]{1,2}\./.test(navigator.userAgent);
-            if (isOldIE || isOldEdge) {
+            var isOldEdge = /Edge\/[0-9]{1,2}\./.test(ua);
+            if (!isSupported || isOldIE || isOldEdge) {
               var div = document.createElement('div');
               div.style.position = 'fixed';
               div.style.top = 0;
@@ -140,7 +147,7 @@ export default function RootLayout({
               div.style.justifyContent = 'center';
               div.style.alignItems = 'center';
               div.style.fontSize = '1.5rem';
-              div.innerHTML = '<b>Your browser is not supported.</b><br/>Please use a modern browser like Chrome, Firefox, Safari, or Edge.';
+              div.innerHTML = '<b>Your browser is not supported.</b><br/>This site is optimized for Chrome, Firefox, Edge, Safari, and DuckDuckGo browsers. Please switch to one of these for the best experience.';
               document.body.appendChild(div);
             }
           })();
