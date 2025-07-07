@@ -125,6 +125,30 @@ export default function RootLayout({
         />
         {/* Gotham font link commented out; Gotham is no longer used in the codebase. */}
         {/* <link href="https://fonts.cdnfonts.com/css/gotham" rel="stylesheet" /> */}
+        <script dangerouslySetInnerHTML={{__html: `
+          (function() {
+            var isOldIE = /*@cc_on!@*/false || !!document.documentMode;
+            var isOldEdge = /Edge\/[0-9]{1,2}\./.test(navigator.userAgent);
+            if (isOldIE || isOldEdge) {
+              var div = document.createElement('div');
+              div.style.position = 'fixed';
+              div.style.top = 0;
+              div.style.left = 0;
+              div.style.width = '100vw';
+              div.style.height = '100vh';
+              div.style.background = '#fff';
+              div.style.color = '#032b53';
+              div.style.zIndex = 99999;
+              div.style.display = 'flex';
+              div.style.flexDirection = 'column';
+              div.style.justifyContent = 'center';
+              div.style.alignItems = 'center';
+              div.style.fontSize = '1.5rem';
+              div.innerHTML = '<b>Your browser is not supported.</b><br/>Please use a modern browser like Chrome, Firefox, Safari, or Edge.';
+              document.body.appendChild(div);
+            }
+          })();
+        `}} />
       </head>
       <body className={inter.className} style={{ fontFamily: "DM Sans, sans-serif" }}>
         {children}
