@@ -120,7 +120,7 @@ export default function ForRealtorsPage() {
                     Trusted Extension of Your Brand
                   </h3>
                   <p className="text-gray-600 leading-relaxed">
-                    We make you look good by helping buyers settle in with less stress — and no overwhelming to-do list.
+                    We make you look good by helping buyers settle in with less stress and no overwhelming to-do list.
                   </p>
                 </CardContent>
               </Card>
@@ -234,7 +234,7 @@ export default function ForRealtorsPage() {
                     Refer a Client
                   </h3>
                   <p className="text-gray-600 leading-relaxed">
-                    Send us a quick intro — we take it from there.
+                    Send us a quick intro. We take it from there.
                   </p>
                 </CardContent>
               </Card>
@@ -318,7 +318,7 @@ export default function ForRealtorsPage() {
               },
               {
                 name: "Danny P.",
-                text: "Hammy's gave me something no other partner does — a way to show value after the closing table.",
+                text: "Hammy's gave me something no other partner does: a way to show value after the closing table.",
                 rating: 5,
               },
             ]}
@@ -515,7 +515,7 @@ Thank you,
                   {
                     question: "How do I refer someone?",
                     answer:
-                      "Just share their name + contact info with us — or send them to your co-branded referral link. You'll never have to follow up — we handle it, and keep you updated.",
+                      "Just share their contact info with us, or send them to your co-branded referral link. You'll never have to follow up — we handle it, and keep you updated.",
                   },
                   {
                     question: "Can I brand this as part of my service?",

@@ -45,7 +45,7 @@ export default function HomePageClient() {
             <div className="max-w-4xl mx-auto text-center">
               <Badge className="mb-6 bg-[#fba0ab]/10 text-[#032b53] border-[#fba0ab]/20">For new homeowners in Metro Detroit</Badge>
               <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-[#032b53] mb-6 leading-tight">Your home's trusted partner from day one.</h1>
-              <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">From filters to furnaces, we handle the to-dos that come with your new home — so you can actually enjoy it.</p>
+              <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">From filters to furnaces, we handle the to-dos that come with your new home, so you can actually enjoy it.</p>
               <Button className="bg-[#032b53] hover:bg-[#032b53]/90 text-white px-8 py-6 text-lg rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 font-discount-bold" onClick={scrollToForm}>Get My Home Plan</Button>
               <p className="text-sm mt-4 text-gray-500">No pressure. No contracts. Just help when you need it.</p>
             </div>
@@ -74,7 +74,7 @@ export default function HomePageClient() {
                   <CardContent className="p-8 text-center">
                     <div className="w-16 h-16 bg-[#fba0ab]/10 rounded-full flex items-center justify-center mx-auto mb-6"><Calendar className="w-8 h-8 text-[#032b53]" /></div>
                     <h3 className="text-xl font-bold text-[#032b53] mb-4">You Get Your Game Plan</h3>
-                    <p className="text-gray-600 leading-relaxed">Custom schedule with the right tasks at the right times. Seasonal stuff, preventive care, trusted pros on speed dial—all tailored to your home and budget.</p>
+                    <p className="text-gray-600 leading-relaxed">Custom schedule with the right tasks at the right times. Seasonal stuff, preventive care, trusted pros on speed dial, all tailored to your home and budget.</p>
                   </CardContent>
                 </Card>
                 <Card className="border-0 shadow-lg rounded-2xl overflow-hidden hover:shadow-xl transition-shadow duration-300">
@@ -130,7 +130,7 @@ export default function HomePageClient() {
                 },
                 {
                   name: "Mark V.",
-                  text: "I didn't lift a finger, and somehow everything got done. Hammy's took care of the filters, cleared the gutters, and even checked in after it rained to make sure nothing got backed up. It honestly felt like having a home manager who actually keeps track of your house better than you do—and genuinely cares that it runs well.",
+                  text: "I didn't lift a finger, and somehow everything got done. Hammy's took care of the filters, cleared the gutters, and even checked in after it rained to make sure nothing got backed up. It honestly felt like having a home manager who actually keeps track of your house better than you do, and genuinely cares that it runs well.",
                   rating: 5,
                 },
                 {
@@ -140,7 +140,7 @@ export default function HomePageClient() {
                 },
                 {
                   name: "David B.",
-                  text: "We'd just moved in and were already drowning in to-dos—things we didn't even know needed doing. Hammy's stepped in right away and took the pressure off. They handled the filters, checked the sump pump, even caught a gutter issue before the first rain hit. It was such a relief to feel like the house was in good hands from day one.",
+                  text: "We'd just moved in and were already drowning in to-dos, things we didn't even know needed doing. Hammy's stepped in right away and took the pressure off. They handled the filters, checked the sump pump, even caught a gutter issue before the first rain hit. It was such a relief to feel like the house was in good hands from day one.",
                   rating: 5,
                 },
               ]}
@@ -205,17 +205,17 @@ export default function HomePageClient() {
                       {
                         question: "What if something urgent happens?",
                         answer:
-                          "We've got you. Every plan includes emergency support — with 24/7 access for higher-tier members. Whether it's a burst pipe or a power outage, we coordinate the right help fast.",
+                          "We've got you. Every plan includes emergency support, with 24/7 access for higher-tier members. Whether it's a burst pipe or a power outage, we coordinate the right help fast.",
                       },
                       {
                         question: "Do you work with my existing vendors?",
                         answer:
-                          "Absolutely. If you have vendors you trust, we'll coordinate with them directly. If not, we've got a vetted network ready to step in — and we're always happy to compare quotes, timelines, and quality.",
+                          "Absolutely. If you have vendors you trust, we'll coordinate with them directly. If not, we've got a vetted network ready to step in, and we're always happy to compare quotes, timelines, and quality.",
                       },
                       {
                         question: "Is there a contract or long-term commitment?",
                         answer:
-                          "Nope. Our annual plans are billed quarterly or yearly, and you can cancel anytime before your next billing cycle. Most clients stick around because it works — not because they're locked in.",
+                          "Nope. Our annual plans are billed quarterly or yearly, and you can cancel anytime before your next billing cycle. Most clients stick around because it works, not because they're locked in.",
                       },
                       {
                         question: "How much does it cost?",
@@ -255,7 +255,7 @@ export default function HomePageClient() {
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
               <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to get your weekends back?</h2>
-              <p className="text-xl mb-8 opacity-90 max-w-2xl mx-auto">Join Metro Detroit homeowners who trust Hammy's to keep their homes running smoothly—so they can enjoy more, and worry less.</p>
+              <p className="text-xl mb-8 opacity-90 max-w-2xl mx-auto">Join Metro Detroit homeowners who trust Hammy's to keep their homes running smoothly, so they can enjoy more, and worry less.</p>
               <Button className="bg-[#fba0ab] hover:bg-[#fba0ab]/90 text-[#032b53] px-8 py-6 text-lg rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 font-discount-bold">Get Started</Button>
               <p className="text-sm mt-4 opacity-75">No contracts • No pressure • Just help when you need it</p>
             </div>
