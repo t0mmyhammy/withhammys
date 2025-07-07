@@ -8,6 +8,7 @@ import { Home } from "lucide-react";
 import { useState, useEffect } from "react";
 import PlacesAutocomplete from "react-places-autocomplete";
 import { Suggestion } from "react-places-autocomplete";
+import Script from 'next/script';
 
 // Helper to format US phone numbers as (123) 456-7890
 function formatPhoneNumber(value: string) {
@@ -49,6 +50,7 @@ export default function Form({
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState("");
   const [placesError, setPlacesError] = useState(false);
+  const [mapsScriptLoaded, setMapsScriptLoaded] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     if (e.target.id === "phone") {
@@ -91,19 +93,21 @@ export default function Form({
   };
 
   useEffect(() => {
-    // Check if Google Places API is loaded
-    const checkGooglePlaces = () => {
-      if (typeof window !== "undefined" && window.google && window.google.maps && window.google.maps.places) {
-        console.log("Google Places API loaded successfully.");
-        setPlacesError(false);
-      } else {
-        console.warn("Google Places API not loaded. Falling back to manual address input.");
-        setPlacesError(true);
-      }
-    };
-    // Try after a short delay to allow script to load
-    const timeout = setTimeout(checkGooglePlaces, 1500);
-    return () => clearTimeout(timeout);
+    if (typeof window !== 'undefined' && window.google && window.google.maps && window.google.maps.places) {
+      setMapsScriptLoaded(true);
+      return;
+    }
+    // Check if script already exists
+    const existingScript = document.querySelector('script[src*="maps.googleapis.com/maps/api/js"]');
+    if (!existingScript) {
+      const script = document.createElement('script');
+      script.src = `https://maps.googleapis.com/maps/api/js?key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}&libraries=places`;
+      script.async = true;
+      script.onload = () => setMapsScriptLoaded(true);
+      document.body.appendChild(script);
+    } else {
+      existingScript.addEventListener('load', () => setMapsScriptLoaded(true));
+    }
   }, []);
 
   useEffect(() => {

@@ -119,10 +119,6 @@ export default function RootLayout({
         <link rel="apple-touch-icon" href="/favicon/apple-touch-icon.png" />
         <link rel="manifest" href="/favicon/site.webmanifest" />
         <link rel="preload" href="/logos/hammys-primary-logo.svg" as="image" />
-        <Script
-          src={`https://maps.googleapis.com/maps/api/js?key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}&libraries=places`}
-          strategy="beforeInteractive"
-        />
         {/* Gotham font link commented out; Gotham is no longer used in the codebase. */}
         {/* <link href="https://fonts.cdnfonts.com/css/gotham" rel="stylesheet" /> */}
         <script dangerouslySetInnerHTML={{__html: `
