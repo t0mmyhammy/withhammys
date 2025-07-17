@@ -25,9 +25,9 @@ export default function PasswordGate() {
   return (
     <div className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-background text-foreground">
       <div className="flex flex-col items-center gap-6 p-8 rounded-lg shadow-lg bg-white dark:bg-zinc-900">
-        <img src="/logos/hammy-stacked-logo.svg" alt="Hammy's Logo" className="w-24 h-24 mb-2" />
-        <div className="text-2xl font-bold text-center">🔐🐷<br/>Welcome to Hammy’s</div>
-        <div className="text-center text-muted-foreground mb-4">
+        <img src="/logos/hammy-stacked.svg" alt="Hammy's Logo" className="w-24 h-24 mb-2" />
+        <div className="text-2xl font-discount-black text-center">Welcome Home</div>
+        <div className="text-center text-muted-foreground mb-4 font-dm-sans">
           This version of the site is private for early users and partners.
         </div>
         <form onSubmit={handleSubmit} className="w-full flex flex-col gap-3">
@@ -36,12 +36,12 @@ export default function PasswordGate() {
             placeholder="Enter password"
             value={password}
             onChange={e => { setPassword(e.target.value); setError(""); }}
-            className="text-lg"
+            className="text-lg font-dm-sans"
             autoFocus
           />
-          <Button type="submit" className="w-full text-lg font-semibold">Enter</Button>
+          <Button type="submit" className="w-full text-lg font-semibold bg-blue-600 hover:bg-blue-700 text-white font-dm-sans">Enter</Button>
         </form>
-        {error && <div className="text-red-500 text-sm mt-2">{error}</div>}
+        {error && <div className="text-red-500 text-sm mt-2 font-dm-sans">{error}</div>}
       </div>
     </div>
   );
