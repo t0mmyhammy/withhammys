@@ -45,7 +45,7 @@ export default function HomePageClient() {
             <div className="max-w-4xl mx-auto text-center">
               <Badge className="mb-6 bg-[#fba0ab]/10 text-[#032b53] border-[#fba0ab]/20">For new homeowners in Metro Detroit</Badge>
               <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-[#032b53] mb-6 leading-tight">Your home's trusted partner from day one.</h1>
-              <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">From filters to furnaces, we handle the to-dos that come with your new home, so you can actually enjoy it.</p>
+              <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">From move-in tasks to year-round care, Hammy's coordinates the projects, people, and upkeep your home needs — so you can actually enjoy it.</p>
               <Button className="bg-[#032b53] hover:bg-[#032b53]/90 text-white px-8 py-6 text-lg rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 font-discount-bold" onClick={scrollToForm}>Get My Home Plan</Button>
               <p className="text-sm mt-4 text-gray-500">No pressure. No contracts. Just help when you need it.</p>
             </div>
