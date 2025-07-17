@@ -11,11 +11,13 @@ export default function PasswordGate() {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [showPassword, setShowPassword] = useState(false);
-  const sitePassword = process.env.NEXT_PUBLIC_SITE_PASSWORD;
+  const sitePasswords = process.env.NEXT_PUBLIC_SITE_PASSWORD?.split(',') || [];
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (password === sitePassword) {
+    const isValidPassword = sitePasswords.some(pwd => password === pwd.trim());
+    
+    if (isValidPassword) {
       localStorage.setItem(PASSWORD_KEY, "true");
       window.location.reload();
     } else {
