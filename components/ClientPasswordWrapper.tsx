@@ -8,7 +8,7 @@ export default function ClientPasswordWrapper({ children }: { children: React.Re
   const [access, setAccess] = useState(false);
   useEffect(() => {
     if (typeof window !== "undefined") {
-      setAccess(localStorage.getItem("hammy_access_granted") === "true");
+      setAccess(sessionStorage.getItem("hammy_access_granted") === "true");
     }
   }, []);
   if (!access) return <PasswordGate />;

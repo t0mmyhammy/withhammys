@@ -18,7 +18,7 @@ export default function PasswordGate() {
     const isValidPassword = sitePasswords.some(pwd => password === pwd.trim());
     
     if (isValidPassword) {
-      localStorage.setItem(PASSWORD_KEY, "true");
+      sessionStorage.setItem(PASSWORD_KEY, "true");
       window.location.reload();
     } else {
       setError("Incorrect password. Please try again.");
