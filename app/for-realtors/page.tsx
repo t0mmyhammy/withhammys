@@ -609,14 +609,8 @@ Thank you,
           <div className="max-w-6xl mx-auto">
             <div className="flex flex-col md:flex-row justify-between items-center">
               <div className="mb-6 md:mb-0">
-                <h3
-                  className="text-2xl font-bold text-[#032b53] mb-2"
-                >
-                  Hammy's
-                </h3>
-                <p>
-                  We sweat the small stuff so you can bring home the bacon.
-                </p>
+                <img src="/logos/hammy-stacked.svg" alt="Hammy's Logo" className="h-8 mb-2" />
+                <p>We handle the house. You make it home.</p>
               </div>
 
               <div className="flex flex-col md:flex-row items-center gap-6">

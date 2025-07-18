@@ -256,7 +256,7 @@ export default function HomePageClient() {
               <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to get your weekends back?</h2>
               <p className="text-xl mb-8 opacity-90 max-w-2xl mx-auto">Join Metro Detroit homeowners who trust Hammy's to keep their homes running smoothly, so they can enjoy more, and worry less.</p>
               <Button className="bg-[#fba0ab] hover:bg-[#fba0ab]/90 text-[#032b53] px-8 py-6 text-lg rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 font-discount-bold">Get Started</Button>
-              <p className="text-sm mt-4 opacity-75">No contracts • No pressure • Just help when you need it</p>
+              <p className="text-sm mt-4 opacity-75">We handle the house. You make it home.</p>
             </div>
           </div>
         </section>
@@ -266,8 +266,8 @@ export default function HomePageClient() {
             <div className="max-w-6xl mx-auto">
               <div className="flex flex-col md:flex-row justify-between items-center">
                 <div className="mb-6 md:mb-0">
-                  <h3 className="text-2xl font-bold text-[#032b53] mb-2">Hammy's</h3>
-                  <p>We sweat the small stuff so you can bring home the bacon.</p>
+                  <img src="/logos/hammy-stacked.svg" alt="Hammy's Logo" className="h-8 mb-2" />
+                  <p>We handle the house. You make it home.</p>
                 </div>
                 <div className="flex flex-col md:flex-row items-center gap-6">
                   <nav className="flex gap-6 text-sm">

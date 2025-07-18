@@ -138,11 +138,7 @@ export default function AboutPage() {
           <div className="max-w-6xl mx-auto">
             <div className="flex flex-col md:flex-row justify-between items-center">
               <div className="mb-6 md:mb-0">
-                <h3
-                  className="text-2xl font-bold text-[#032b53] mb-2"
-                >
-                  Hammy's
-                </h3>
+                <img src="/logos/hammy-stacked.svg" alt="Hammy's Logo" className="h-8 mb-2" />
                 <p className="text-gray-600">
                   We handle the house. You make it home.
                 </p>
