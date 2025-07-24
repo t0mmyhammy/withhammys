@@ -45,7 +45,7 @@ export default function HomePageClient() {
             <div className="max-w-4xl mx-auto text-center">
               <Badge className="mb-6 bg-[#fba0ab]/10 text-[#032b53] border-[#fba0ab]/20">For new homeowners in Metro Detroit</Badge>
               <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-[#032b53] mb-6 leading-tight">Your home's trusted partner from day one.</h1>
-              <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">From move-in tasks to year-round care, Hammy's coordinates the projects, people, and upkeep your home needs — so you can actually enjoy it.</p>
+              <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">From move-in tasks to year-round care, Hammy's coordinates the projects, people, and upkeep your home needs so you can actually enjoy it.</p>
               <Button className="bg-[#032b53] hover:bg-[#032b53]/90 text-white px-8 py-6 text-lg rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 font-discount-bold" onClick={scrollToForm}>Get My Home Plan</Button>
             </div>
           </div>
@@ -66,7 +66,7 @@ export default function HomePageClient() {
                   <CardContent className="p-8 text-center">
                     <div className="w-16 h-16 bg-[#fba0ab]/10 rounded-full flex items-center justify-center mx-auto mb-6"><Home className="w-8 h-8 text-[#032b53]" /></div>
                     <h3 className="text-xl font-bold text-[#032b53] mb-4">We Come to You</h3>
-                    <p className="text-gray-600 leading-relaxed">We visit your home, take inventory of what you've got, and figure out how to keep it all running smoothly. No clipboard theatrics—just a solid plan.</p>
+                    <p className="text-gray-600 leading-relaxed">We visit your home, take inventory of what you've got, and figure out how to keep it all running smoothly. No clipboard theatrics, just a solid plan.</p>
                   </CardContent>
                 </Card>
                 <Card className="border-0 shadow-lg rounded-2xl overflow-hidden hover:shadow-xl transition-shadow duration-300">
@@ -134,7 +134,7 @@ export default function HomePageClient() {
                 },
                 {
                   name: "Mike & Natalie G.",
-                  text: "We thought we had a decent system for keeping up with the house—until Hammy's came in and pointed out everything we'd been missing. Now it feels like the whole place runs on autopilot, and we're not scrambling every time something goes wrong. They helped us go from reactive to actually being ahead of things, which feels like a huge relief.",
+                  text: "We thought we had a decent system for keeping up with the house until Hammy's came in and pointed out everything we'd been missing. Now it feels like the whole place runs on autopilot, and we're not scrambling every time something goes wrong. They helped us go from reactive to actually being ahead of things, which feels like a huge relief.",
                   rating: 5,
                 },
                 {
@@ -234,7 +234,7 @@ export default function HomePageClient() {
                   </Accordion>
                 </div>
                 {/* Homeowner Form */}
-                <div>
+                <div id="form">
                   <Form
                     heading="Get Started With Hammy's"
                     subheading="Tell us about your home and how we can help. We'll handle the rest."
